@@ -1,85 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Awakening Essence</title>
 
-    <link rel="stylesheet" href="css/awakening.css">
+    <link
+        rel="stylesheet"
+        href="css/awakening.css"
+    >
+
 </head>
+
 
 <body>
 
     <main id="game">
 
-        <!-- =========================================
-             AWAKENING ESSENCE INTRO
-        ========================================== -->
 
-        <section id="intro-screen" class="screen active">
+        <!-- =========================================
+             AWAKENING ESSENCE — STORY SELECTION
+             ========================================= -->
+
+        <section
+            id="story-selection-screen"
+            class="screen active"
+        >
+
+            <!--
+                The introductory image contains the
+                explanation for Awakening Essence.
+            -->
 
             <img
                 id="awakening-intro-image"
                 src="assets/Awakening-Essence-Intro.png"
-                alt="Awakening Essence Introduction"
+                alt="Awakening Essence"
             >
 
-            <button
-                id="continue-button"
-                class="main-button"
-            >
-                CONTINUE
-            </button>
 
-        </section>
-
-
-        <!-- =========================================
-             STORY SELECTION
-        ========================================== -->
-
-        <section id="story-selection-screen" class="screen">
-
-            <h1>CHOOSE YOUR EXPERIENCE</h1>
+            <!-- =====================================
+                 STORY SELECTION
+                 ===================================== -->
 
             <div id="story-buttons">
 
-                <!-- COMPLETED STORY -->
-
                 <button
                     class="story-button"
-                    data-story="lie"
+                    data-story="the-lie"
+                    type="button"
                 >
                     THE LIE
                 </button>
 
 
-                <!-- STORIES NOT YET COMPLETED -->
-
                 <button
                     class="story-button unavailable"
+                    data-story="disrespect"
+                    type="button"
                     disabled
                 >
                     DISRESPECT
                 </button>
 
+
                 <button
                     class="story-button unavailable"
+                    data-story="nowhere-but-here"
+                    type="button"
                     disabled
                 >
                     NOWHERE BUT HERE
                 </button>
 
+
                 <button
                     class="story-button unavailable"
+                    data-story="too-trusting"
+                    type="button"
                     disabled
                 >
                     TOO TRUSTING
                 </button>
 
+
                 <button
                     class="story-button unavailable"
+                    data-story="just-gone"
+                    type="button"
                     disabled
                 >
                     JUST GONE
@@ -92,21 +107,24 @@
 
         <!-- =========================================
              STORY SCREEN
-        ========================================== -->
+             ========================================= -->
 
-        <section id="story-screen" class="screen">
+        <section
+            id="story-screen"
+            class="screen"
+        >
 
             <div id="story-header">
 
-                <h1 id="story-title">
-                    THE LIE
-                </h1>
+                <h1 id="story-title"></h1>
 
                 <p id="act-number"></p>
 
             </div>
 
+
             <article id="story-text"></article>
+
 
             <div id="choices"></div>
 
@@ -114,10 +132,13 @@
 
 
         <!-- =========================================
-             RESULT SCREEN
-        ========================================== -->
+             ESSENCE RESULT
+             ========================================= -->
 
-        <section id="result-screen" class="screen">
+        <section
+            id="result-screen"
+            class="screen"
+        >
 
             <h1>ESSENCE AWAKENED</h1>
 
@@ -125,10 +146,35 @@
 
         </section>
 
+
     </main>
 
 
+    <!-- =============================================
+         STORY FILES
+         ============================================= -->
+
+    <script src="stories/the-lie.js"></script>
+
+
+    <!--
+        These will be activated when their stories
+        are completed.
+
+        <script src="stories/disrespect.js"></script>
+        <script src="stories/nowhere-but-here.js"></script>
+        <script src="stories/too-trusting.js"></script>
+        <script src="stories/just-gone.js"></script>
+    -->
+
+
+    <!-- =============================================
+         AWAKENING ESSENCE GAME ENGINE
+         ============================================= -->
+
     <script src="js/awakening.js"></script>
 
+
 </body>
+
 </html>

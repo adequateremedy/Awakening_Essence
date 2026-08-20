@@ -12,20 +12,24 @@ const gameState = {
 
     currentStory: null,
 
-    currentAct: 0,
+    currentNode: null,
 
     scores: {
+
         Agni: 0,
         Jala: 0,
         Prithvi: 0,
         Vayu: 0
+
     },
 
     feelings: {
+
         Agni: {},
         Jala: {},
         Prithvi: {},
         Vayu: {}
+
     }
 
 };
@@ -38,23 +42,35 @@ const gameState = {
 const essenceData = {
 
     Agni: {
+
         name: "Agni",
+
         core: "Anger"
+
     },
 
     Jala: {
+
         name: "Jala",
+
         core: "Sadness"
+
     },
 
     Prithvi: {
+
         name: "Prithvi",
+
         core: "Confidence"
+
     },
 
     Vayu: {
+
         name: "Vayu",
+
         core: "Fear"
+
     }
 
 };
@@ -65,57 +81,102 @@ const essenceData = {
    ========================================================= */
 
 const storySelectionScreen =
-    document.getElementById("story-selection-screen");
+    document.getElementById(
+        "story-selection-screen"
+    );
+
 
 const storyScreen =
-    document.getElementById("story-screen");
+    document.getElementById(
+        "story-screen"
+    );
+
 
 const resultScreen =
-    document.getElementById("result-screen");
+    document.getElementById(
+        "result-screen"
+    );
+
 
 const storyButtons =
-    document.querySelectorAll(".story-button");
+    document.querySelectorAll(
+        ".story-button"
+    );
+
 
 const storyTitle =
-    document.getElementById("story-title");
+    document.getElementById(
+        "story-title"
+    );
+
 
 const actNumber =
-    document.getElementById("act-number");
+    document.getElementById(
+        "act-number"
+    );
+
 
 const storyText =
-    document.getElementById("story-text");
+    document.getElementById(
+        "story-text"
+    );
+
 
 const choicesContainer =
-    document.getElementById("choices");
+    document.getElementById(
+        "choices"
+    );
+
 
 const resultContent =
-    document.getElementById("result-content");
+    document.getElementById(
+        "result-content"
+    );
 
 
 /* =========================================================
    STORY SELECTION
    ========================================================= */
 
-storyButtons.forEach(button => {
+storyButtons.forEach(
 
-    button.addEventListener("click", () => {
+    button => {
 
-        if (button.disabled) {
-            return;
-        }
+        button.addEventListener(
 
-        const selectedStory =
-            button.dataset.story;
+            "click",
 
-        if (!selectedStory) {
-            return;
-        }
+            () => {
 
-        startStory(selectedStory);
+                if (button.disabled) {
 
-    });
+                    return;
 
-});
+                }
+
+
+                const selectedStory =
+                    button.dataset.story;
+
+
+                if (!selectedStory) {
+
+                    return;
+
+                }
+
+
+                startStory(
+                    selectedStory
+                );
+
+            }
+
+        );
+
+    }
+
+);
 
 
 /* =========================================================
@@ -124,17 +185,19 @@ storyButtons.forEach(button => {
 
 function startStory(storyName) {
 
-    /*
-        Make sure the selected story actually exists.
-    */
-
     if (
-        typeof awakeningStories === "undefined" ||
+
+        typeof awakeningStories ===
+            "undefined" ||
+
         !awakeningStories[storyName]
+
     ) {
 
         console.error(
+
             `Awakening Essence story "${storyName}" could not be found.`
+
         );
 
         return;
@@ -142,15 +205,12 @@ function startStory(storyName) {
     }
 
 
-    /*
-        Reset the player's Awakening Essence state.
-    */
+    /* -----------------------------------------
+       Reset Story State
+       ----------------------------------------- */
 
     gameState.currentStory =
         storyName;
-
-    gameState.currentAct =
-        0;
 
 
     gameState.scores = {
@@ -173,17 +233,36 @@ function startStory(storyName) {
     };
 
 
-    /*
-        Move from Story Selection
-        into the selected story.
-    */
+    /* -----------------------------------------
+       Begin At Story's Starting Node
+       ----------------------------------------- */
 
-    storySelectionScreen.classList.remove("active");
+    gameState.currentNode =
+        awakeningStories[
+            storyName
+        ].start;
 
-    storyScreen.classList.add("active");
+
+    /* -----------------------------------------
+       Change Screens
+       ----------------------------------------- */
+
+    storySelectionScreen.classList.remove(
+        "active"
+    );
 
 
-    displayAct();
+    resultScreen.classList.remove(
+        "active"
+    );
+
+
+    storyScreen.classList.add(
+        "active"
+    );
+
+
+    displayNode();
 
 }
 
@@ -202,116 +281,156 @@ function getCurrentStory() {
 
 
 /* =========================================================
-   GET CURRENT ACT
+   GET CURRENT NODE
    ========================================================= */
 
-function getCurrentAct() {
+function getCurrentNode() {
 
     const currentStory =
         getCurrentStory();
 
-    return currentStory.acts[
-        gameState.currentAct
-    ];
+
+    return currentStory.acts.find(
+
+        act =>
+
+            act.id ===
+            gameState.currentNode
+
+    );
 
 }
 
 
 /* =========================================================
-   DISPLAY ACT
+   DISPLAY CURRENT NODE
    ========================================================= */
 
-function displayAct() {
+function displayNode() {
 
     const currentStory =
         getCurrentStory();
 
-    const act =
-        getCurrentAct();
+
+    const node =
+        getCurrentNode();
 
 
-    /*
-        Safety check.
-    */
+    /* -----------------------------------------
+       Safety Check
+       ----------------------------------------- */
 
-    if (!act) {
+    if (!node) {
 
-        revealEssence();
+        console.error(
+
+            "Awakening Essence could not find node:",
+
+            gameState.currentNode
+
+        );
 
         return;
 
     }
 
 
-    /*
-        Story title.
-    */
+    /* -----------------------------------------
+       Story Title
+       ----------------------------------------- */
 
     storyTitle.textContent =
         currentStory.title;
 
 
-    /*
-        Act number and title.
-    */
+    /* -----------------------------------------
+       Act Number
+       ----------------------------------------- */
 
     actNumber.textContent =
-        `Act ${act.act} of ${currentStory.acts.length} — ${act.title}`;
+
+        `Act ${node.act} of 10 — ${node.title}`;
 
 
-    /*
-        Story text.
-    */
+    /* -----------------------------------------
+       Story Text
+       ----------------------------------------- */
 
     storyText.innerHTML =
-        act.text;
+        node.text;
 
 
-    /*
-        Clear previous choices.
-    */
+    /* -----------------------------------------
+       Clear Previous Choices
+       ----------------------------------------- */
 
-    choicesContainer.innerHTML = "";
-
-
-    /*
-        Create the four choices.
-    */
-
-    act.choices.forEach(choice => {
-
-        const button =
-            document.createElement("button");
-
-        button.className =
-            "choice-button";
-
-        button.type =
-            "button";
-
-        button.innerHTML =
-            choice.text;
+    choicesContainer.innerHTML =
+        "";
 
 
-        button.addEventListener(
-            "click",
-            () => {
+    /* -----------------------------------------
+       Create Choices
+       ----------------------------------------- */
 
-                recordChoice(choice);
+    node.choices.forEach(
 
-            }
-        );
+        choice => {
+
+            const button =
+                document.createElement(
+                    "button"
+                );
 
 
-        choicesContainer.appendChild(button);
+            button.className =
+                "choice-button";
 
-    });
+
+            button.type =
+                "button";
 
 
-    /*
-        Return the player to the beginning
-        of the current story section.
-    */
+            /*
+                IMPORTANT:
+
+                Only the player's response is
+                displayed.
+
+                Essence and Trigger Feeling
+                remain hidden.
+            */
+
+            button.innerHTML =
+                choice.text;
+
+
+            button.addEventListener(
+
+                "click",
+
+                () => {
+
+                    recordChoice(
+                        choice
+                    );
+
+                }
+
+            );
+
+
+            choicesContainer.appendChild(
+                button
+            );
+
+        }
+
+    );
+
+
+    /* -----------------------------------------
+       Scroll Back To Top
+       ----------------------------------------- */
 
     window.scrollTo({
 
@@ -330,27 +449,45 @@ function displayAct() {
 
 function recordChoice(choice) {
 
-    /*
-        Add one point to the Essence Type
-        associated with the player's response.
-    */
+    /* -----------------------------------------
+       Record Essence Score
+       ----------------------------------------- */
+
+    if (
+
+        !gameState.scores.hasOwnProperty(
+            choice.essence
+        )
+
+    ) {
+
+        console.error(
+            "Invalid Essence Type:",
+            choice.essence
+        );
+
+        return;
+
+    }
+
 
     gameState.scores[
         choice.essence
     ]++;
 
 
-    /*
-        Record the specific Trigger Feeling
-        selected by the player.
-    */
+    /* -----------------------------------------
+       Record Trigger Feeling
+       ----------------------------------------- */
 
     if (
+
         !gameState.feelings[
             choice.essence
         ][
             choice.feeling
         ]
+
     ) {
 
         gameState.feelings[
@@ -369,25 +506,12 @@ function recordChoice(choice) {
     ]++;
 
 
-    /*
-        Move to the next Act.
-    */
-
-    gameState.currentAct++;
-
-
-    /*
-        If all Acts have been completed,
-        determine the player's Essence.
-    */
-
-    const currentStory =
-        getCurrentStory();
-
+    /* -----------------------------------------
+       Determine Next Narrative Node
+       ----------------------------------------- */
 
     if (
-        gameState.currentAct >=
-        currentStory.acts.length
+        choice.next === null
     ) {
 
         revealEssence();
@@ -397,11 +521,11 @@ function recordChoice(choice) {
     }
 
 
-    /*
-        Otherwise display the next Act.
-    */
+    gameState.currentNode =
+        choice.next;
 
-    displayAct();
+
+    displayNode();
 
 }
 
@@ -428,21 +552,17 @@ function determineEssence() {
 
 
     const winners =
-        Object.keys(scores).filter(
+        Object.keys(
+            scores
+        ).filter(
 
             essence =>
-                scores[essence] === maxScore
+
+                scores[essence] ===
+                maxScore
 
         );
 
-
-    /*
-        If there is only one winner,
-        return it.
-
-        Tie handling can be added later
-        when the tie-breaker system is finalized.
-    */
 
     return winners[0];
 
@@ -453,19 +573,21 @@ function determineEssence() {
    DETERMINE TRIGGER FEELING
    ========================================================= */
 
-function determineTriggerFeeling(essence) {
+function determineTriggerFeeling(
+    essence
+) {
 
     const feelings =
-        gameState.feelings[essence];
+        gameState.feelings[
+            essence
+        ];
 
 
     const entries =
-        Object.entries(feelings);
+        Object.entries(
+            feelings
+        );
 
-
-    /*
-        Safety fallback.
-    */
 
     if (
         entries.length === 0
@@ -478,14 +600,10 @@ function determineTriggerFeeling(essence) {
     }
 
 
-    /*
-        Sort Trigger Feelings by
-        number of selections.
-    */
-
     entries.sort(
 
         (a, b) =>
+
             b[1] - a[1]
 
     );
@@ -512,28 +630,27 @@ function revealEssence() {
         );
 
 
-    /*
-        Leave the story.
-    */
+    /* -----------------------------------------
+       Leave Story
+       ----------------------------------------- */
 
     storyScreen.classList.remove(
         "active"
     );
 
 
-    /*
-        Show the result.
-    */
+    /* -----------------------------------------
+       Show Result
+       ----------------------------------------- */
 
     resultScreen.classList.add(
         "active"
     );
 
 
-    /*
-        Display the player's
-        Awakening Essence result.
-    */
+    /* -----------------------------------------
+       Display Result
+       ----------------------------------------- */
 
     resultContent.innerHTML = `
 

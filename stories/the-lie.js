@@ -11,38 +11,85 @@ awakeningStories["the-lie"] = {
 
         /* =====================================================
            ACT 1
-        ===================================================== */
+           ===================================================== */
 
         {
             act: 1,
 
-            title: "Something Doesn't Add Up",
+            title: "The Lie",
 
             text: `
 
                 <p>
-                    Steam rolls across the street in thick white clouds as
-                    the morning machinery begins its daily roar. A locomotive
-                    groans somewhere beyond the buildings, its whistle cutting
-                    sharply through the fog before fading into the constant
-                    clatter of gears and metal.
+                    The afternoon air is heavy with smoke and steam.
+                    Somewhere beyond the rows of buildings, a locomotive
+                    releases a long, shrill whistle, and the sound rolls
+                    through the streets of Crudsder.
                 </p>
 
                 <p>
-                    You are on your way to where you are supposed to be when
-                    you see them.
+                    You move through the crowded street, surrounded by the
+                    familiar sounds of Eidolon's industrial heart—the grinding
+                    of gears, the clatter of metal wheels against stone, the
+                    hiss of pressure valves releasing their breath into the
+                    air.
                 </p>
 
                 <p>
-                    They are exactly where they said they wouldn't be.
+                    You aren't thinking about any of it.
                 </p>
 
                 <p>
-                    For a moment, you simply stare.
+                    You're thinking about what you were told.
                 </p>
 
                 <p>
-                    Maybe there's an explanation.
+                    You remember the words clearly.
+                </p>
+
+                <p>
+                    You remember believing them.
+                </p>
+
+                <p>
+                    There was no reason not to.
+                </p>
+
+                <p>
+                    You trusted this person. Maybe more than you should have.
+                    Maybe enough that you never thought to question what they
+                    said.
+                </p>
+
+                <p>
+                    And then you see them.
+                </p>
+
+                <p>
+                    You stop walking.
+                </p>
+
+                <p>
+                    They are across the street.
+                </p>
+
+                <p>
+                    Exactly where they told you they would not be.
+                </p>
+
+                <p>
+                    For a moment, everything around you seems to continue
+                    normally. People pass between you. A mechanical carriage
+                    rattles over the street. Steam drifts across your view,
+                    briefly hiding them before revealing them again.
+                </p>
+
+                <p>
+                    You stare.
+                </p>
+
+                <p>
+                    Maybe there is an explanation.
                 </p>
 
                 <p>
@@ -50,66 +97,23 @@ awakeningStories["the-lie"] = {
                 </p>
 
                 <p>
-                    You watch as they move through the crowd, completely
-                    unaware that you've seen them. Nothing about their
-                    expression suggests that they are doing anything wrong.
-                    They look calm. Ordinary.
+                    But something inside you has already begun to change.
                 </p>
 
                 <p>
-                    Just like they did when they spoke to you earlier.
+                    You know what you were told.
                 </p>
 
                 <p>
-                    Just like they did when they told you—
+                    And you know what you're seeing.
                 </p>
 
                 <p>
-                    No.
+                    They haven't noticed you yet.
                 </p>
 
                 <p>
-                    You stop yourself.
-                </p>
-
-                <p>
-                    You remember exactly what they said.
-                </p>
-
-                <p>
-                    You look around.
-                </p>
-
-                <p>
-                    The street is crowded enough that no one seems to notice
-                    what has caught your attention. Humans hurry past in work
-                    clothes and heavy coats. A mechanical carriage rattles
-                    over the uneven street. Somewhere above you, a pressure
-                    valve releases with a violent hiss.
-                </p>
-
-                <p>
-                    You look back.
-                </p>
-
-                <p>
-                    They're still there.
-                </p>
-
-                <p>
-                    Something doesn't add up.
-                </p>
-
-                <p>
-                    You could walk away.
-                </p>
-
-                <p>
-                    You could pretend you never saw them.
-                </p>
-
-                <p>
-                    Or you could find out why they are here.
+                    You have a choice.
                 </p>
 
             `,
@@ -118,8 +122,8 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You approach them immediately. Something about this
-                        irritates you, and you want an explanation.
+                        You cross the street and approach them immediately.
+                        Whatever this is, you want an explanation now.
                     `,
 
                     essence: "Agni",
@@ -128,8 +132,8 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You hesitate. The possibility that they've deceived
-                        you hurts more than you want to admit.
+                        You remain where you are. The possibility that they
+                        deliberately deceived you hurts more than you expected.
                     `,
 
                     essence: "Jala",
@@ -138,8 +142,9 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You stop and reconsider what you were told. Maybe
-                        you misunderstood something.
+                        You stop and think carefully. Maybe there is something
+                        you misunderstood. You want to be certain before you
+                        accuse anyone.
                     `,
 
                     essence: "Prithvi",
@@ -148,9 +153,8 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You stay where you are and watch them. Something
-                        feels wrong, and you aren't ready to make yourself
-                        known.
+                        You stay where you are and watch them. Something feels
+                        wrong, and you aren't ready to make yourself known.
                     `,
 
                     essence: "Vayu",
@@ -164,7 +168,7 @@ awakeningStories["the-lie"] = {
 
         /* =====================================================
            ACT 2
-        ===================================================== */
+           ===================================================== */
 
         {
             act: 2,
@@ -174,69 +178,95 @@ awakeningStories["the-lie"] = {
             text: `
 
                 <p>
-                    You eventually find yourself face-to-face with them.
+                    You don't move right away.
                 </p>
 
                 <p>
-                    The noise of the city seems louder here. Steam curls
-                    between you. Their eyes meet yours.
+                    The moment stretches.
                 </p>
 
                 <p>
-                    They smile.
+                    You watch them through the moving crowd, trying to make
+                    sense of what you're seeing.
                 </p>
 
                 <p>
-                    They speak as though nothing is unusual.
+                    The memory of their words keeps returning to you.
                 </p>
 
                 <p>
-                    You listen.
+                    They were certain.
                 </p>
 
                 <p>
-                    But now you are paying attention to every word.
+                    You remember that certainty because it made you feel
+                    certain too.
                 </p>
 
                 <p>
-                    You ask about what you saw.
+                    Now that certainty is beginning to crack.
                 </p>
 
                 <p>
-                    For the briefest moment, their expression changes.
+                    If you approach them, you can ask.
                 </p>
 
                 <p>
-                    Then it is gone.
+                    If you don't, you can watch.
                 </p>
 
                 <p>
-                    They give you an explanation.
+                    Either way, you know you can't simply pretend you didn't
+                    see them.
                 </p>
 
                 <p>
-                    It sounds simple.
+                    You make your choice.
                 </p>
 
                 <p>
-                    Almost convincing.
+                    You approach.
                 </p>
 
                 <p>
-                    Except—
+                    Or you wait.
                 </p>
 
                 <p>
-                    It doesn't match what you saw.
+                    Or you watch.
                 </p>
 
                 <p>
-                    You know what you saw.
+                    And eventually, the moment comes when they notice you.
                 </p>
 
                 <p>
-                    And now you have to decide whether you're going to
-                    challenge them.
+                    Their eyes meet yours.
+                </p>
+
+                <p>
+                    There is a pause.
+                </p>
+
+                <p>
+                    It is small.
+                </p>
+
+                <p>
+                    Almost nothing.
+                </p>
+
+                <p>
+                    But you notice it.
+                </p>
+
+                <p>
+                    They know why you're looking at them.
+                </p>
+
+                <p>
+                    You can feel the question forming before you ever speak
+                    it.
                 </p>
 
             `,
@@ -245,7 +275,8 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You call them out. You don't appreciate being lied to.
+                        You ask them directly why they're here. You don't
+                        bother hiding your irritation.
                     `,
 
                     essence: "Agni",
@@ -254,7 +285,8 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You swallow the hurt and ask them to explain again.
+                        You ask quietly. You aren't trying to accuse them.
+                        You just want them to tell you the truth.
                     `,
 
                     essence: "Jala",
@@ -263,8 +295,9 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You calmly tell them what you saw and stand by what
-                        you know.
+                        You tell them exactly what you were told and exactly
+                        what you've seen. You want to hear their explanation
+                        before deciding what to believe.
                     `,
 
                     essence: "Prithvi",
@@ -273,8 +306,8 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You let the answer go—for now. Something about their
-                        reaction makes you uncomfortable.
+                        You don't reveal everything you've noticed. You ask
+                        only enough to see what they will say.
                     `,
 
                     essence: "Vayu",
@@ -288,55 +321,69 @@ awakeningStories["the-lie"] = {
 
         /* =====================================================
            ACT 3
-        ===================================================== */
+           ===================================================== */
 
         {
             act: 3,
 
-            title: "The Response",
+            title: "The Answer",
 
             text: `
 
                 <p>
-                    Their answer hangs between you.
+                    They answer you.
                 </p>
 
                 <p>
-                    You can hear the machinery behind the walls. Somewhere
-                    nearby, metal strikes metal in a steady rhythm.
+                    You listen.
                 </p>
 
                 <p>
-                    You look at them again.
+                    The explanation is delivered calmly, almost casually,
+                    as though there is nothing unusual about what you've
+                    asked.
                 </p>
 
                 <p>
-                    Something about the way they answered makes your stomach
-                    tighten.
+                    You want to believe it.
                 </p>
 
                 <p>
-                    You don't have proof.
+                    Maybe you even try.
                 </p>
 
                 <p>
-                    Not enough to silence every doubt.
+                    But something doesn't fit.
                 </p>
 
                 <p>
-                    But you know what you saw.
+                    You think about what you saw.
                 </p>
 
                 <p>
-                    You also know what they just told you.
+                    You think about what you were told.
                 </p>
 
                 <p>
-                    The two things cannot both be true.
+                    Then you think about the way they looked at you before
+                    answering.
                 </p>
 
                 <p>
-                    They wait for your response.
+                    You don't know why that matters.
+                </p>
+
+                <p>
+                    It simply does.
+                </p>
+
+                <p>
+                    You have another question.
+                </p>
+
+                <p>
+                    This time, you know you're paying attention to more than
+                    their words.
                 </p>
 
             `,
@@ -345,8 +392,8 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You confront them more directly. You refuse to let
-                        them talk around the question.
+                        You challenge the explanation. You don't appreciate
+                        being given an answer that doesn't make sense.
                     `,
 
                     essence: "Agni",
@@ -355,8 +402,8 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You pull back. Their response hurts enough that you
-                        don't want to show them how much.
+                        You ask them to explain it again. Part of you still
+                        wants to believe them.
                     `,
 
                     essence: "Jala",
@@ -365,18 +412,18 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You explain exactly what you noticed and trust your
-                        own perception.
+                        You calmly point out the part that doesn't make sense.
+                        You trust yourself enough to question the answer.
                     `,
 
                     essence: "Prithvi",
-                    feeling: "Defensiveness"
+                    feeling: "Certainty"
                 },
 
                 {
                     text: `
-                        You stop asking. Something about the conversation
-                        makes you afraid of what you might uncover.
+                        You stop asking questions. Instead, you pay attention
+                        to what they don't say.
                     `,
 
                     essence: "Vayu",
@@ -390,66 +437,92 @@ awakeningStories["the-lie"] = {
 
         /* =====================================================
            ACT 4
-        ===================================================== */
+           ===================================================== */
 
         {
             act: 4,
 
-            title: "Knowing",
+            title: "What You Notice",
 
             text: `
 
                 <p>
-                    Later, you find something you weren't meant to see.
+                    You don't forget the conversation.
                 </p>
 
                 <p>
-                    You stare at it.
+                    You try to continue with your day, but the words keep
+                    circling through your mind.
                 </p>
 
                 <p>
-                    For several seconds, you don't move.
+                    Something was wrong.
                 </p>
 
                 <p>
-                    There is no explanation that can make it fit with what
-                    you were told.
+                    You don't know exactly what.
                 </p>
 
                 <p>
-                    You look at it again.
+                    So you begin paying attention.
                 </p>
 
                 <p>
-                    The truth settles into place.
+                    Not because you want to spy.
                 </p>
 
                 <p>
-                    They lied to you.
+                    Not because you want to accuse anyone.
                 </p>
 
                 <p>
-                    Not accidentally.
+                    You simply need to know whether the feeling inside you is
+                    telling you something real.
                 </p>
 
                 <p>
-                    Not because you misunderstood.
+                    Then you notice something.
                 </p>
 
                 <p>
-                    They knew the truth.
+                    It is small.
                 </p>
 
                 <p>
-                    And they chose to tell you something else.
+                    Someone else might have overlooked it entirely.
                 </p>
 
                 <p>
-                    Your thoughts begin moving faster.
+                    You don't.
                 </p>
 
                 <p>
-                    If this was a lie, how much else don't you know?
+                    Suddenly, the explanation you were given doesn't just feel
+                    wrong.
+                </p>
+
+                <p>
+                    It cannot be right.
+                </p>
+
+                <p>
+                    You feel the realization settle inside you.
+                </p>
+
+                <p>
+                    You were lied to.
+                </p>
+
+                <p>
+                    You don't know why.
+                </p>
+
+                <p>
+                    You don't know how much was hidden.
+                </p>
+
+                <p>
+                    But you know now that what you were told wasn't the truth.
                 </p>
 
             `,
@@ -458,8 +531,8 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You feel resentment. They allowed you to trust them
-                        while knowing they weren't being honest.
+                        Anger rises immediately. You feel insulted that they
+                        thought they could deceive you.
                     `,
 
                     essence: "Agni",
@@ -468,8 +541,8 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You feel heartbreak. You never imagined they would
-                        be the one to deceive you.
+                        The realization hurts. You trusted them, and now you
+                        don't know whether that trust meant anything to them.
                     `,
 
                     essence: "Jala",
@@ -478,17 +551,18 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You feel humiliated. You trusted them completely.
+                        You refuse to blame yourself. You believed them because
+                        you had no reason not to.
                     `,
 
                     essence: "Prithvi",
-                    feeling: "Humiliation"
+                    feeling: "Self-Assurance"
                 },
 
                 {
                     text: `
-                        You feel anxious. If they hid this from you, what
-                        else could be hidden?
+                        You become uneasy. If this was hidden from you, you
+                        begin wondering what else you don't know.
                     `,
 
                     essence: "Vayu",
@@ -502,21 +576,65 @@ awakeningStories["the-lie"] = {
 
         /* =====================================================
            ACT 5
-        ===================================================== */
+           ===================================================== */
 
         {
             act: 5,
 
-            title: "The Explanation",
+            title: "The Truth Between You",
 
             text: `
 
                 <p>
-                    You confront them again.
+                    You find yourself thinking about the moment again.
                 </p>
 
                 <p>
-                    This time, there is no easy way around it.
+                    The moment when you first realized something wasn't right.
+                </p>
+
+                <p>
+                    Now you know.
+                </p>
+
+                <p>
+                    You were lied to.
+                </p>
+
+                <p>
+                    The realization should make everything easier.
+                </p>
+
+                <p>
+                    Instead, it makes everything harder.
+                </p>
+
+                <p>
+                    Because now you have to decide what to do with the truth.
+                </p>
+
+                <p>
+                    You see them again.
+                </p>
+
+                <p>
+                    This time, there is no pretending that you don't know.
+                </p>
+
+                <p>
+                    You face them.
+                </p>
+
+                <p>
+                    You don't tell them everything you've discovered.
+                </p>
+
+                <p>
+                    You don't need to.
+                </p>
+
+                <p>
+                    They can see it in your expression.
                 </p>
 
                 <p>
@@ -524,39 +642,12 @@ awakeningStories["the-lie"] = {
                 </p>
 
                 <p>
-                    And they know that you know.
+                    They give you another explanation.
                 </p>
 
                 <p>
-                    They give you an explanation.
-                </p>
-
-                <p>
-                    You listen.
-                </p>
-
-                <p>
-                    Maybe it makes sense.
-                </p>
-
-                <p>
-                    Maybe it doesn't.
-                </p>
-
-                <p>
-                    But one fact remains.
-                </p>
-
-                <p>
-                    They knew the truth.
-                </p>
-
-                <p>
-                    And they decided that you didn't need to know it.
-                </p>
-
-                <p>
-                    You can feel something changing inside you.
+                    And now you have to decide what that explanation means to
+                    you.
                 </p>
 
             `,
@@ -565,8 +656,8 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You lose respect for them. You cannot accept that
-                        lying to you was acceptable.
+                        You don't accept it. You tell them plainly that you
+                        know they're still not telling you the truth.
                     `,
 
                     essence: "Agni",
@@ -575,8 +666,8 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You wish they had trusted you enough to tell you the
-                        truth.
+                        You listen because you desperately want there to be
+                        something that makes this hurt less.
                     `,
 
                     essence: "Jala",
@@ -585,22 +676,22 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You cannot understand how someone you trusted could
-                        make that choice.
+                        You tell them you don't need them to convince you of
+                        what you already know.
                     `,
 
                     essence: "Prithvi",
-                    feeling: "Disbelief"
+                    feeling: "Defiance"
                 },
 
                 {
                     text: `
-                        You no longer know which parts of what you've been
-                        told are real.
+                        You say very little. You don't trust yourself to show
+                        them how much you've figured out.
                     `,
 
                     essence: "Vayu",
-                    feeling: "Confusion"
+                    feeling: "Distrust"
                 }
 
             ]
@@ -610,60 +701,65 @@ awakeningStories["the-lie"] = {
 
         /* =====================================================
            ACT 6
-        ===================================================== */
+           ===================================================== */
 
         {
             act: 6,
 
-            title: "The Second Wound",
+            title: "Everything You Remember",
 
             text: `
 
                 <p>
-                    You thought knowing the truth would make the feeling go
-                    away.
+                    After that conversation, you can't stop remembering.
                 </p>
 
                 <p>
-                    It doesn't.
+                    Not just today.
                 </p>
 
                 <p>
-                    Instead, you begin remembering other moments.
+                    Everything.
                 </p>
 
                 <p>
-                    Things that didn't seem important before suddenly feel
-                    different.
+                    Every time you accepted their words without question.
                 </p>
 
                 <p>
-                    Conversations you never questioned.
+                    Every time you believed them.
                 </p>
 
                 <p>
-                    Explanations you accepted.
+                    Every moment when trusting them felt natural.
                 </p>
 
                 <p>
-                    Moments when you trusted their words without hesitation.
+                    Now each memory carries a question.
                 </p>
 
                 <p>
-                    Now you wonder how many of those moments were exactly what
-                    they appeared to be.
+                    Was that true?
                 </p>
 
                 <p>
-                    They knew what you believed.
+                    Was that true?
                 </p>
 
                 <p>
-                    They knew you trusted them.
+                    Was that true?
                 </p>
 
                 <p>
-                    And they chose to let you continue believing.
+                    You realize something painful.
+                </p>
+
+                <p>
+                    The lie doesn't only change what you know about them.
+                </p>
+
+                <p>
+                    It changes how you remember yourself.
                 </p>
 
             `,
@@ -672,8 +768,8 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You feel betrayed. Anger burns through you because
-                        they deliberately deceived you.
+                        You become furious. They knew you trusted them, and
+                        they chose to use that trust.
                     `,
 
                     essence: "Agni",
@@ -683,7 +779,7 @@ awakeningStories["the-lie"] = {
                 {
                     text: `
                         You feel rejected. You wonder why your trust wasn't
-                        important enough to protect.
+                        important enough for them to protect.
                     `,
 
                     essence: "Jala",
@@ -692,18 +788,18 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You become defiant. Whatever they think of you, you
-                        refuse to let their actions determine who you are.
+                        You refuse to let their choice define your judgment.
+                        Their dishonesty belongs to them.
                     `,
 
                     essence: "Prithvi",
-                    feeling: "Defiance"
+                    feeling: "Resolve"
                 },
 
                 {
                     text: `
-                        You feel helpless. You cannot control whether another
-                        person chooses to be honest with you.
+                        You feel helpless. You realize you cannot control
+                        whether another person chooses honesty.
                     `,
 
                     essence: "Vayu",
@@ -717,55 +813,68 @@ awakeningStories["the-lie"] = {
 
         /* =====================================================
            ACT 7
-        ===================================================== */
+           ===================================================== */
 
         {
             act: 7,
 
-            title: "What Changed",
+            title: "Nothing Feels the Same",
 
             text: `
 
                 <p>
-                    Afterward, things are different.
+                    The city continues around you.
                 </p>
 
                 <p>
-                    Maybe nothing around you has changed.
+                    Machines continue turning.
                 </p>
 
                 <p>
-                    The streets are still crowded. Locomotives still thunder
-                    through the city. Steam still rises from the streets.
-                    Machinery still turns behind walls.
+                    Steam continues rising from the streets.
                 </p>
 
                 <p>
-                    But something inside you has shifted.
+                    People continue moving through their days as though
+                    nothing has changed.
                 </p>
 
                 <p>
-                    You notice how often people say things they don't mean.
+                    But something has changed.
                 </p>
 
                 <p>
-                    How easily information can be hidden.
+                    You notice it when you hear familiar words.
                 </p>
 
                 <p>
-                    How quickly a smile can conceal something.
+                    You notice it when someone promises something.
                 </p>
 
                 <p>
-                    You look at the person who lied to you.
+                    You notice it when someone looks directly at you and
+                    tells you something you want to believe.
                 </p>
 
                 <p>
-                    Their presence once felt safe.
+                    Before, you would have simply believed them.
                 </p>
 
                 <p>
-                    It doesn't feel the same anymore.
+                    Now you listen differently.
+                </p>
+
+                <p>
+                    You watch.
+                </p>
+
+                <p>
+                    You remember.
+                </p>
+
+                <p>
+                    And you realize the lie has changed the way you respond
+                    to the world around you.
                 </p>
 
             `,
@@ -774,8 +883,8 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You are furious that their lie changed something you
-                        once considered safe.
+                        You feel furious that one person's lie could change
+                        something you once felt safe about.
                     `,
 
                     essence: "Agni",
@@ -793,22 +902,22 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You begin questioning whether your own judgment can
-                        really be trusted.
+                        You remind yourself that trusting someone did not make
+                        you foolish.
                     `,
 
                     essence: "Prithvi",
-                    feeling: "Insecurity"
+                    feeling: "Self-Worth"
                 },
 
                 {
                     text: `
-                        You begin keeping parts of yourself hidden from
-                        others.
+                        You begin keeping more of yourself hidden. Distance
+                        feels safer now.
                     `,
 
                     essence: "Vayu",
-                    feeling: "Distrust"
+                    feeling: "Detachment"
                 }
 
             ]
@@ -818,7 +927,7 @@ awakeningStories["the-lie"] = {
 
         /* =====================================================
            ACT 8
-        ===================================================== */
+           ===================================================== */
 
         {
             act: 8,
@@ -828,48 +937,59 @@ awakeningStories["the-lie"] = {
             text: `
 
                 <p>
-                    You try to put the experience behind you.
+                    You think you have finally managed to put the experience
+                    somewhere inside yourself where you don't have to look at
+                    it.
                 </p>
 
                 <p>
-                    But something brings it back.
+                    Then something happens.
                 </p>
 
                 <p>
-                    A familiar voice.
+                    It isn't necessarily important.
                 </p>
 
                 <p>
-                    A certain expression.
+                    A voice.
                 </p>
 
                 <p>
-                    A particular phrase.
+                    A familiar expression.
                 </p>
 
                 <p>
-                    You feel the same shift inside yourself.
+                    A sentence that sounds almost exactly like something
+                    you've heard before.
                 </p>
 
                 <p>
-                    The experience is not finished with you.
+                    And suddenly you're there again.
                 </p>
 
                 <p>
-                    You can push it away.
+                    You remember the moment you realized.
                 </p>
 
                 <p>
-                    You can face it.
+                    You remember what it felt like to understand that someone
+                    you trusted had not been honest with you.
                 </p>
 
                 <p>
-                    You can let it change you.
+                    The feeling returns.
                 </p>
 
                 <p>
-                    Or you can decide that you will never allow yourself to
-                    feel this way again.
+                    Stronger than you expected.
+                </p>
+
+                <p>
+                    You cannot stop it.
+                </p>
+
+                <p>
+                    You can only decide what you do with it.
                 </p>
 
             `,
@@ -878,17 +998,18 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        The anger returns. You want to confront what happened
-                        all over again.
+                        You let the anger rise. You refuse to pretend that
+                        what happened didn't matter.
                     `,
 
                     essence: "Agni",
-                    feeling: "Anger"
+                    feeling: "Fury"
                 },
 
                 {
                     text: `
-                        You wish for the relationship you had before the lie.
+                        You feel the ache of what you lost and wish you could
+                        return to the way things were before.
                     `,
 
                     essence: "Jala",
@@ -897,8 +1018,8 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You promise yourself that you will never again ignore
-                        what your instincts tell you.
+                        You steady yourself. Whatever happened, you know who
+                        you are now.
                     `,
 
                     essence: "Prithvi",
@@ -907,8 +1028,8 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You push the feeling away. You don't want to feel it
-                        again.
+                        You pull away from the feeling. You don't want to
+                        experience that kind of hurt again.
                     `,
 
                     essence: "Vayu",
@@ -922,12 +1043,12 @@ awakeningStories["the-lie"] = {
 
         /* =====================================================
            ACT 9
-        ===================================================== */
+           ===================================================== */
 
         {
             act: 9,
 
-            title: "What You Learn",
+            title: "What Remains",
 
             text: `
 
@@ -936,40 +1057,46 @@ awakeningStories["the-lie"] = {
                 </p>
 
                 <p>
-                    You don't have all the answers.
+                    There are things about the world you don't understand yet.
                 </p>
 
                 <p>
-                    You don't understand everything happening around you.
+                    There are things about people you haven't learned.
                 </p>
 
                 <p>
-                    But you understand something now.
+                    But you have learned this.
                 </p>
 
                 <p>
-                    Trust is not something you can see.
+                    Trust cannot be forced.
                 </p>
 
                 <p>
-                    It cannot be held in your hands.
+                    Truth cannot be demanded from someone who has already
+                    decided to hide it.
                 </p>
 
                 <p>
-                    And when someone breaks it, there is no machine in the
-                    world capable of simply putting it back together.
+                    And you cannot control what another person chooses to do
+                    with the trust you give them.
                 </p>
 
                 <p>
-                    You stand there with the truth inside you.
+                    You can only decide what happens inside you afterward.
                 </p>
 
                 <p>
-                    You cannot change what happened.
+                    The thought settles quietly.
                 </p>
 
                 <p>
-                    But you can decide what it means to you.
+                    For the first time, you aren't thinking about what they
+                    did.
+                </p>
+
+                <p>
+                    You're thinking about what it did to you.
                 </p>
 
             `,
@@ -978,8 +1105,8 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You decide that no one will ever make you feel
-                        powerless through deception again.
+                        You decide you will never allow someone else's
+                        dishonesty to make you powerless.
                     `,
 
                     essence: "Agni",
@@ -988,8 +1115,8 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You realize that trusting someone means giving them
-                        the ability to hurt you.
+                        You accept that trusting someone means accepting that
+                        they can hurt you.
                     `,
 
                     essence: "Jala",
@@ -998,18 +1125,18 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        You realize that someone else's decision to lie does
-                        not determine your value.
+                        You understand that their lie does not determine your
+                        worth or your ability to judge what is true.
                     `,
 
                     essence: "Prithvi",
-                    feeling: "Self-Worth"
+                    feeling: "Confidence"
                 },
 
                 {
                     text: `
-                        You decide that keeping your distance may be safer
-                        than being vulnerable.
+                        You decide that protecting yourself sometimes means
+                        keeping your distance.
                     `,
 
                     essence: "Vayu",
@@ -1023,72 +1150,92 @@ awakeningStories["the-lie"] = {
 
         /* =====================================================
            ACT 10
-        ===================================================== */
+           ===================================================== */
 
         {
             act: 10,
 
-            title: "What Remains",
+            title: "Awakening",
 
             text: `
 
                 <p>
-                    Everything is different now.
+                    The world around you is still moving.
                 </p>
 
                 <p>
-                    You know the truth.
+                    Gears turn.
                 </p>
 
                 <p>
-                    You know that you were lied to.
+                    Steam rises.
                 </p>
 
                 <p>
-                    You know what it feels like to discover that someone you
-                    trusted could choose to deceive you.
+                    Somewhere in the distance, another locomotive announces
+                    its arrival with a long mechanical whistle.
                 </p>
 
                 <p>
-                    You stand there, surrounded by the familiar sounds of
-                    Midgard—the hiss of steam, the grinding of gears, the
-                    distant cry of a locomotive.
+                    Everything is exactly as it was.
                 </p>
 
                 <p>
-                    Yet all of it seems strangely distant.
+                    Except you.
                 </p>
 
                 <p>
-                    Something inside you is louder.
+                    You think about the lie.
                 </p>
 
                 <p>
-                    You feel it building.
+                    You think about the person who told it.
                 </p>
 
                 <p>
-                    Not a thought.
+                    You think about the trust you gave.
                 </p>
 
                 <p>
-                    Not a decision.
+                    You think about the moment you realized that what you
+                    believed was not the truth.
                 </p>
 
                 <p>
-                    A feeling.
+                    And then you feel it.
                 </p>
 
                 <p>
-                    Something deep within you responds to what has happened.
+                    Something deep within you responds.
                 </p>
 
                 <p>
-                    You cannot stop it.
+                    It isn't a thought.
                 </p>
 
                 <p>
-                    You can only feel it.
+                    It isn't a decision.
+                </p>
+
+                <p>
+                    It is a feeling.
+                </p>
+
+                <p>
+                    The feeling you've carried through every moment of this
+                    experience.
+                </p>
+
+                <p>
+                    It rises now.
+                </p>
+
+                <p>
+                    Your Energy answers it.
+                </p>
+
+                <p>
+                    Something inside you awakens.
                 </p>
 
             `,
@@ -1097,26 +1244,28 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        Anger. The fire of having been deceived rises inside
-                        you.
+                        Anger — the fury of being deceived rises through you,
+                        refusing to be silenced.
                     `,
 
                     essence: "Agni",
-                    feeling: "Anger"
+                    feeling: "Fury"
                 },
 
                 {
                     text: `
-                        Sadness. You feel the ache of what the lie has changed.
+                        Sadness — the longing for what existed before the lie
+                        overwhelms you.
                     `,
 
                     essence: "Jala",
-                    feeling: "Sadness"
+                    feeling: "Longing"
                 },
 
                 {
                     text: `
-                        Confidence. You know that your worth belongs to you.
+                        Confidence — the certainty that your worth and
+                        judgment belong to you settles within you.
                     `,
 
                     essence: "Prithvi",
@@ -1125,8 +1274,8 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        Fear. You remember what it feels like when trust makes
-                        the world uncertain.
+                        Fear — the instinct to protect yourself from being
+                        hurt again takes hold.
                     `,
 
                     essence: "Vayu",

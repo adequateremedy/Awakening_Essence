@@ -18,15 +18,18 @@ body {
 #game {
     width: 100%;
     min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     padding: 30px;
 }
 
 .screen {
     display: none;
-    width: min(900px, 100%);
+
+    width: min(1000px, 100%);
 }
 
 .screen.active {
@@ -34,76 +37,140 @@ body {
 }
 
 
-/* =========================
-   TITLE SCREEN
-========================= */
+/* =========================================
+   INTRO SCREEN
+========================================= */
 
-#title-screen {
+#intro-screen {
     text-align: center;
 }
 
-#title-screen h1 {
-    font-size: clamp(2.5rem, 7vw, 5rem);
-    letter-spacing: 0.12em;
-    margin-bottom: 20px;
+#awakening-intro-image {
+    display: block;
+
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+
+    margin: 0 auto 30px;
 }
 
-.subtitle {
-    font-size: 1.25rem;
-    font-style: italic;
-    opacity: 0.75;
-    margin-bottom: 50px;
-}
-
-
-/* =========================
-   BUTTONS
-========================= */
-
-button {
-    font-family: inherit;
-    cursor: pointer;
-}
-
-#begin-button {
+.main-button {
     background: transparent;
+
     color: #e8e0d0;
+
     border: 1px solid #e8e0d0;
+
     padding: 14px 40px;
+
+    font-family: inherit;
     font-size: 1rem;
+
     letter-spacing: 0.15em;
+
+    cursor: pointer;
+
     transition: 0.2s ease;
 }
 
-#begin-button:hover {
+.main-button:hover {
     background: #e8e0d0;
     color: #111;
 }
 
 
-/* =========================
+/* =========================================
+   STORY SELECTION
+========================================= */
+
+#story-selection-screen {
+    text-align: center;
+}
+
+#story-selection-screen h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+
+    letter-spacing: 0.1em;
+
+    margin-bottom: 45px;
+}
+
+#story-buttons {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    width: min(650px, 100%);
+
+    margin: 0 auto;
+}
+
+.story-button {
+    width: 100%;
+
+    padding: 20px;
+
+    background: transparent;
+
+    color: #e8e0d0;
+
+    border: 1px solid rgba(232, 224, 208, 0.45);
+
+    font-family: inherit;
+
+    font-size: 1.1rem;
+
+    letter-spacing: 0.12em;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.story-button:hover {
+    background: rgba(232, 224, 208, 0.08);
+
+    border-color: #e8e0d0;
+}
+
+.story-button.unavailable {
+    opacity: 0.3;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================
    STORY
-========================= */
+========================================= */
 
 #story-header {
     text-align: center;
+
     margin-bottom: 45px;
 }
 
 #story-title {
     font-size: clamp(2rem, 5vw, 3.5rem);
+
     letter-spacing: 0.1em;
+
     margin: 0 0 10px;
 }
 
 #act-number {
     text-transform: uppercase;
+
     letter-spacing: 0.2em;
+
     opacity: 0.55;
 }
 
 #story-text {
     font-size: 1.2rem;
+
     line-height: 1.9;
 }
 
@@ -112,38 +179,53 @@ button {
 }
 
 
-/* =========================
+/* =========================================
    CHOICES
-========================= */
+========================================= */
 
 #choices {
     display: flex;
     flex-direction: column;
+
     gap: 14px;
+
     margin-top: 40px;
 }
 
 .choice-button {
     width: 100%;
+
     text-align: left;
+
     background: transparent;
+
     color: #e8e0d0;
+
     border: 1px solid rgba(232, 224, 208, 0.35);
+
     padding: 18px 22px;
+
+    font-family: inherit;
+
     font-size: 1.05rem;
+
     line-height: 1.5;
+
+    cursor: pointer;
+
     transition: 0.2s ease;
 }
 
 .choice-button:hover {
     border-color: #e8e0d0;
+
     background: rgba(232, 224, 208, 0.06);
 }
 
 
-/* =========================
+/* =========================================
    RESULT
-========================= */
+========================================= */
 
 #result-screen {
     text-align: center;
@@ -151,22 +233,28 @@ button {
 
 #result-screen h1 {
     letter-spacing: 0.15em;
+
     margin-bottom: 45px;
 }
 
 #result-content {
     font-size: 1.25rem;
+
     line-height: 1.8;
 }
 
 .result-label {
     text-transform: uppercase;
+
     letter-spacing: 0.15em;
+
     opacity: 0.55;
+
     margin-top: 25px;
 }
 
 .result-value {
     font-size: 2rem;
+
     margin-top: 5px;
 }

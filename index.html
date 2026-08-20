@@ -34,11 +34,6 @@
             class="screen active"
         >
 
-            <!--
-                The introductory image contains the
-                explanation for Awakening Essence.
-            -->
-
             <img
                 id="awakening-intro-image"
                 src="assets/Awakening-Essence-Intro.png"
@@ -151,6 +146,19 @@
 
 
     <!-- =============================================
+         STORY REGISTRY
+         =============================================
+
+         This MUST be created before the story files
+         are loaded so each story can register itself.
+    -->
+
+    <script>
+        const awakeningStories = {};
+    </script>
+
+
+    <!-- =============================================
          STORY FILES
          ============================================= -->
 
@@ -158,7 +166,7 @@
 
 
     <!--
-        These will be activated when their stories
+        These will be added when their stories
         are completed.
 
         <script src="stories/disrespect.js"></script>

@@ -13,22 +13,97 @@
 
     <main id="game">
 
-        <section id="title-screen" class="screen active">
-            <h1>AWAKENING ESSENCE</h1>
+        <!-- =========================================
+             AWAKENING ESSENCE INTRO
+        ========================================== -->
 
-            <p class="subtitle">
-                The moment your Energy manifests.
-            </p>
+        <section id="intro-screen" class="screen active">
 
-            <button id="begin-button">BEGIN</button>
+            <img
+                id="awakening-intro-image"
+                src="assets/Awakening-Essence-Intro.png"
+                alt="Awakening Essence Introduction"
+            >
+
+            <button
+                id="continue-button"
+                class="main-button"
+            >
+                CONTINUE
+            </button>
+
         </section>
 
+
+        <!-- =========================================
+             STORY SELECTION
+        ========================================== -->
+
+        <section id="story-selection-screen" class="screen">
+
+            <h1>CHOOSE YOUR EXPERIENCE</h1>
+
+            <div id="story-buttons">
+
+                <!-- COMPLETED STORY -->
+
+                <button
+                    class="story-button"
+                    data-story="lie"
+                >
+                    THE LIE
+                </button>
+
+
+                <!-- STORIES NOT YET COMPLETED -->
+
+                <button
+                    class="story-button unavailable"
+                    disabled
+                >
+                    DISRESPECT
+                </button>
+
+                <button
+                    class="story-button unavailable"
+                    disabled
+                >
+                    NOWHERE BUT HERE
+                </button>
+
+                <button
+                    class="story-button unavailable"
+                    disabled
+                >
+                    TOO TRUSTING
+                </button>
+
+                <button
+                    class="story-button unavailable"
+                    disabled
+                >
+                    JUST GONE
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             STORY SCREEN
+        ========================================== -->
 
         <section id="story-screen" class="screen">
 
             <div id="story-header">
-                <h1 id="story-title">THE LIE</h1>
+
+                <h1 id="story-title">
+                    THE LIE
+                </h1>
+
                 <p id="act-number"></p>
+
             </div>
 
             <article id="story-text"></article>
@@ -37,6 +112,10 @@
 
         </section>
 
+
+        <!-- =========================================
+             RESULT SCREEN
+        ========================================== -->
 
         <section id="result-screen" class="screen">
 
@@ -47,6 +126,7 @@
         </section>
 
     </main>
+
 
     <script src="js/awakening.js"></script>
 

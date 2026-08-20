@@ -125,7 +125,6 @@ awakeningStories["the-lie"] = {
                         You cross the street and approach them immediately.
                         Whatever this is, you want an explanation now.
                     `,
-
                     essence: "Agni",
                     feeling: "Irritation"
                 },
@@ -135,7 +134,6 @@ awakeningStories["the-lie"] = {
                         You remain where you are. The possibility that they
                         deliberately deceived you hurts more than you expected.
                     `,
-
                     essence: "Jala",
                     feeling: "Hurt"
                 },
@@ -146,7 +144,6 @@ awakeningStories["the-lie"] = {
                         you misunderstood. You want to be certain before you
                         accuse anyone.
                     `,
-
                     essence: "Prithvi",
                     feeling: "Doubt"
                 },
@@ -156,7 +153,6 @@ awakeningStories["the-lie"] = {
                         You stay where you are and watch them. Something feels
                         wrong, and you aren't ready to make yourself known.
                     `,
-
                     essence: "Vayu",
                     feeling: "Unease"
                 }
@@ -178,16 +174,16 @@ awakeningStories["the-lie"] = {
             text: `
 
                 <p>
-                    You don't move right away.
-                </p>
-
-                <p>
                     The moment stretches.
                 </p>
 
                 <p>
-                    You watch them through the moving crowd, trying to make
-                    sense of what you're seeing.
+                    Whether you stepped forward or remained among the crowd,
+                    you cannot ignore what is happening now.
+                </p>
+
+                <p>
+                    You watch them through the movement of the street.
                 </p>
 
                 <p>
@@ -208,48 +204,31 @@ awakeningStories["the-lie"] = {
                 </p>
 
                 <p>
-                    If you approach them, you can ask.
+                    If there is an explanation, you need to hear it.
                 </p>
 
                 <p>
-                    If you don't, you can watch.
+                    If there isn't, you need to know that too.
                 </p>
 
                 <p>
-                    Either way, you know you can't simply pretend you didn't
-                    see them.
+                    Then their eyes move across the street.
                 </p>
 
                 <p>
-                    You make your choice.
+                    They find you.
                 </p>
 
                 <p>
-                    You approach.
+                    For the briefest moment, neither of you moves.
                 </p>
 
                 <p>
-                    Or you wait.
+                    Their expression changes.
                 </p>
 
                 <p>
-                    Or you watch.
-                </p>
-
-                <p>
-                    And eventually, the moment comes when they notice you.
-                </p>
-
-                <p>
-                    Their eyes meet yours.
-                </p>
-
-                <p>
-                    There is a pause.
-                </p>
-
-                <p>
-                    It is small.
+                    It is subtle.
                 </p>
 
                 <p>
@@ -258,10 +237,6 @@ awakeningStories["the-lie"] = {
 
                 <p>
                     But you notice it.
-                </p>
-
-                <p>
-                    They know why you're looking at them.
                 </p>
 
                 <p>
@@ -276,9 +251,8 @@ awakeningStories["the-lie"] = {
                 {
                     text: `
                         You ask them directly why they're here. You don't
-                        bother hiding your irritation.
+                        bother hiding how irritated you are.
                     `,
-
                     essence: "Agni",
                     feeling: "Frustration"
                 },
@@ -288,7 +262,6 @@ awakeningStories["the-lie"] = {
                         You ask quietly. You aren't trying to accuse them.
                         You just want them to tell you the truth.
                     `,
-
                     essence: "Jala",
                     feeling: "Disappointment"
                 },
@@ -299,7 +272,6 @@ awakeningStories["the-lie"] = {
                         what you've seen. You want to hear their explanation
                         before deciding what to believe.
                     `,
-
                     essence: "Prithvi",
                     feeling: "Uncertainty"
                 },
@@ -309,7 +281,6 @@ awakeningStories["the-lie"] = {
                         You don't reveal everything you've noticed. You ask
                         only enough to see what they will say.
                     `,
-
                     essence: "Vayu",
                     feeling: "Suspicion"
                 }
@@ -395,7 +366,6 @@ awakeningStories["the-lie"] = {
                         You challenge the explanation. You don't appreciate
                         being given an answer that doesn't make sense.
                     `,
-
                     essence: "Agni",
                     feeling: "Indignation"
                 },
@@ -405,7 +375,6 @@ awakeningStories["the-lie"] = {
                         You ask them to explain it again. Part of you still
                         wants to believe them.
                     `,
-
                     essence: "Jala",
                     feeling: "Vulnerability"
                 },
@@ -415,7 +384,6 @@ awakeningStories["the-lie"] = {
                         You calmly point out the part that doesn't make sense.
                         You trust yourself enough to question the answer.
                     `,
-
                     essence: "Prithvi",
                     feeling: "Certainty"
                 },
@@ -425,7 +393,6 @@ awakeningStories["the-lie"] = {
                         You stop asking questions. Instead, you pay attention
                         to what they don't say.
                     `,
-
                     essence: "Vayu",
                     feeling: "Apprehension"
                 }
@@ -534,7 +501,6 @@ awakeningStories["the-lie"] = {
                         Anger rises immediately. You feel insulted that they
                         thought they could deceive you.
                     `,
-
                     essence: "Agni",
                     feeling: "Resentment"
                 },
@@ -544,7 +510,6 @@ awakeningStories["the-lie"] = {
                         The realization hurts. You trusted them, and now you
                         don't know whether that trust meant anything to them.
                     `,
-
                     essence: "Jala",
                     feeling: "Heartbreak"
                 },
@@ -554,7 +519,6 @@ awakeningStories["the-lie"] = {
                         You refuse to blame yourself. You believed them because
                         you had no reason not to.
                     `,
-
                     essence: "Prithvi",
                     feeling: "Self-Assurance"
                 },
@@ -564,7 +528,6 @@ awakeningStories["the-lie"] = {
                         You become uneasy. If this was hidden from you, you
                         begin wondering what else you don't know.
                     `,
-
                     essence: "Vayu",
                     feeling: "Anxiety"
                 }
@@ -659,7 +622,6 @@ awakeningStories["the-lie"] = {
                         You don't accept it. You tell them plainly that you
                         know they're still not telling you the truth.
                     `,
-
                     essence: "Agni",
                     feeling: "Contempt"
                 },
@@ -669,7 +631,6 @@ awakeningStories["the-lie"] = {
                         You listen because you desperately want there to be
                         something that makes this hurt less.
                     `,
-
                     essence: "Jala",
                     feeling: "Sorrow"
                 },
@@ -679,7 +640,6 @@ awakeningStories["the-lie"] = {
                         You tell them you don't need them to convince you of
                         what you already know.
                     `,
-
                     essence: "Prithvi",
                     feeling: "Defiance"
                 },
@@ -689,7 +649,6 @@ awakeningStories["the-lie"] = {
                         You say very little. You don't trust yourself to show
                         them how much you've figured out.
                     `,
-
                     essence: "Vayu",
                     feeling: "Distrust"
                 }
@@ -771,7 +730,6 @@ awakeningStories["the-lie"] = {
                         You become furious. They knew you trusted them, and
                         they chose to use that trust.
                     `,
-
                     essence: "Agni",
                     feeling: "Betrayal-Rage"
                 },
@@ -781,7 +739,6 @@ awakeningStories["the-lie"] = {
                         You feel rejected. You wonder why your trust wasn't
                         important enough for them to protect.
                     `,
-
                     essence: "Jala",
                     feeling: "Rejection"
                 },
@@ -791,7 +748,6 @@ awakeningStories["the-lie"] = {
                         You refuse to let their choice define your judgment.
                         Their dishonesty belongs to them.
                     `,
-
                     essence: "Prithvi",
                     feeling: "Resolve"
                 },
@@ -801,7 +757,6 @@ awakeningStories["the-lie"] = {
                         You feel helpless. You realize you cannot control
                         whether another person chooses honesty.
                     `,
-
                     essence: "Vayu",
                     feeling: "Helplessness"
                 }
@@ -886,7 +841,6 @@ awakeningStories["the-lie"] = {
                         You feel furious that one person's lie could change
                         something you once felt safe about.
                     `,
-
                     essence: "Agni",
                     feeling: "Fury"
                 },
@@ -895,7 +849,6 @@ awakeningStories["the-lie"] = {
                     text: `
                         You mourn the trust you had before you knew the truth.
                     `,
-
                     essence: "Jala",
                     feeling: "Grief"
                 },
@@ -905,7 +858,6 @@ awakeningStories["the-lie"] = {
                         You remind yourself that trusting someone did not make
                         you foolish.
                     `,
-
                     essence: "Prithvi",
                     feeling: "Self-Worth"
                 },
@@ -915,7 +867,6 @@ awakeningStories["the-lie"] = {
                         You begin keeping more of yourself hidden. Distance
                         feels safer now.
                     `,
-
                     essence: "Vayu",
                     feeling: "Detachment"
                 }
@@ -1001,7 +952,6 @@ awakeningStories["the-lie"] = {
                         You let the anger rise. You refuse to pretend that
                         what happened didn't matter.
                     `,
-
                     essence: "Agni",
                     feeling: "Fury"
                 },
@@ -1011,7 +961,6 @@ awakeningStories["the-lie"] = {
                         You feel the ache of what you lost and wish you could
                         return to the way things were before.
                     `,
-
                     essence: "Jala",
                     feeling: "Longing"
                 },
@@ -1021,7 +970,6 @@ awakeningStories["the-lie"] = {
                         You steady yourself. Whatever happened, you know who
                         you are now.
                     `,
-
                     essence: "Prithvi",
                     feeling: "Resolve"
                 },
@@ -1031,7 +979,6 @@ awakeningStories["the-lie"] = {
                         You pull away from the feeling. You don't want to
                         experience that kind of hurt again.
                     `,
-
                     essence: "Vayu",
                     feeling: "Avoidance"
                 }
@@ -1108,7 +1055,6 @@ awakeningStories["the-lie"] = {
                         You decide you will never allow someone else's
                         dishonesty to make you powerless.
                     `,
-
                     essence: "Agni",
                     feeling: "Defiance"
                 },
@@ -1118,7 +1064,6 @@ awakeningStories["the-lie"] = {
                         You accept that trusting someone means accepting that
                         they can hurt you.
                     `,
-
                     essence: "Jala",
                     feeling: "Vulnerability"
                 },
@@ -1128,7 +1073,6 @@ awakeningStories["the-lie"] = {
                         You understand that their lie does not determine your
                         worth or your ability to judge what is true.
                     `,
-
                     essence: "Prithvi",
                     feeling: "Confidence"
                 },
@@ -1138,7 +1082,6 @@ awakeningStories["the-lie"] = {
                         You decide that protecting yourself sometimes means
                         keeping your distance.
                     `,
-
                     essence: "Vayu",
                     feeling: "Detachment"
                 }
@@ -1244,40 +1187,36 @@ awakeningStories["the-lie"] = {
 
                 {
                     text: `
-                        Anger — the fury of being deceived rises through you,
-                        refusing to be silenced.
+                        The fury of being deceived rises through you, refusing
+                        to be silenced.
                     `,
-
                     essence: "Agni",
                     feeling: "Fury"
                 },
 
                 {
                     text: `
-                        Sadness — the longing for what existed before the lie
-                        overwhelms you.
+                        You ache for what existed before the lie, wishing you
+                        could return to the way things were.
                     `,
-
                     essence: "Jala",
                     feeling: "Longing"
                 },
 
                 {
                     text: `
-                        Confidence — the certainty that your worth and
-                        judgment belong to you settles within you.
+                        You know your worth and your own judgment belong to
+                        you, regardless of what someone else chose to do.
                     `,
-
                     essence: "Prithvi",
                     feeling: "Confidence"
                 },
 
                 {
                     text: `
-                        Fear — the instinct to protect yourself from being
-                        hurt again takes hold.
+                        The instinct to protect yourself from being hurt again
+                        takes hold, and you pull away from what you cannot trust.
                     `,
-
                     essence: "Vayu",
                     feeling: "Fear"
                 }

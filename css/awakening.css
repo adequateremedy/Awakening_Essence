@@ -12,19 +12,68 @@ body {
 }
 
 @keyframes furnacePulse {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% { opacity: 0.7; }
+    100% { opacity: 1; }
 }
 
 body {
-    /* Deep desaturated navy to a smoky amber/charcoal */
-    background: radial-gradient(circle at center, #1a1614 0%, #0b0c10 100%);
-    background-size: 200% 200%;
-    animation: furnacePulse 18s ease-in-out infinite;
+    /* Base background color, smoothly transitions when data-room changes */
+    background-color: #0b0c10;
+    transition: background-color 2.5s ease;
     color: #e3d2b9; /* Brass/amber tint */
     font-family: 'Crimson Text', Georgia, "Times New Roman", serif;
+    overflow-x: hidden; /* Prevents scrollbars from edge-sparkles */
 }
+
+/* Ambient pulsing vignette over the background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.85) 100%);
+    animation: furnacePulse 8s ease-in-out infinite alternate;
+}
+
+/* =========================================
+   DYNAMIC ROOM BACKGROUNDS
+========================================= */
+
+body[data-room="the-boiler-room"] { background-color: #2b110a; } /* Deep rusty heat */
+body[data-room="the-cargo-hold-chase"] { background-color: #12100e; } /* Dusty, dark wood */
+body[data-room="food-and-drink"] { background-color: #161a1d; } /* Neutral metallic hall */
+body[data-room="the-kitchen"] { background-color: #0f1418; } /* Cold steel / icebox */
+body[data-room="passenger-apartments"] { background-color: #1c1510; } /* Warm mahogany */
+
+
+/* =========================================
+   SPARKLE CURSOR EFFECT
+========================================= */
+
+.sparkle {
+    position: fixed;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #e3d2b9;
+    box-shadow: 0 0 6px #e3d2b9, 0 0 10px #f0e4d4;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    animation: sparkleFade 0.8s ease-out forwards;
+}
+
+@keyframes sparkleFade {
+    0% { opacity: 1; transform: translate(-50%, -50%) scale(1) translateY(0); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(0) translateY(15px); }
+}
+
+
+/* =========================================
+   LAYOUT & CONTAINERS
+========================================= */
 
 #game {
     width: 100%;
@@ -43,6 +92,7 @@ body {
 .screen.active {
     display: block;
 }
+
 
 /* =========================================
    CINEMATIC TRANSITIONS

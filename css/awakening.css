@@ -10,7 +10,7 @@ body {
 }
 
 body {
-    background: #111;
+    background: #000;
     color: #e8e0d0;
     font-family: Georgia, "Times New Roman", serif;
 }
@@ -28,55 +28,11 @@ body {
 
 .screen {
     display: none;
-
     width: min(1000px, 100%);
 }
 
 .screen.active {
     display: block;
-}
-
-
-/* =========================================
-   INTRO SCREEN
-========================================= */
-
-#intro-screen {
-    text-align: center;
-}
-
-#awakening-intro-image {
-    display: block;
-
-    width: 100%;
-    max-width: 1000px;
-    height: auto;
-
-    margin: 0 auto 30px;
-}
-
-.main-button {
-    background: transparent;
-
-    color: #e8e0d0;
-
-    border: 1px solid #e8e0d0;
-
-    padding: 14px 40px;
-
-    font-family: inherit;
-    font-size: 1rem;
-
-    letter-spacing: 0.15em;
-
-    cursor: pointer;
-
-    transition: 0.2s ease;
-}
-
-.main-button:hover {
-    background: #e8e0d0;
-    color: #111;
 }
 
 
@@ -88,56 +44,42 @@ body {
     text-align: center;
 }
 
-#story-selection-screen h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-
-    letter-spacing: 0.1em;
-
-    margin-bottom: 45px;
+#awakening-intro-image {
+    display: block;
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    margin: 0 auto 30px;
 }
 
 #story-buttons {
     display: flex;
     flex-direction: column;
-
     gap: 15px;
-
     width: min(650px, 100%);
-
     margin: 0 auto;
 }
 
 .story-button {
     width: 100%;
-
     padding: 20px;
-
     background: transparent;
-
     color: #e8e0d0;
-
     border: 1px solid rgba(232, 224, 208, 0.45);
-
     font-family: inherit;
-
     font-size: 1.1rem;
-
     letter-spacing: 0.12em;
-
     cursor: pointer;
-
     transition: 0.2s ease;
 }
 
 .story-button:hover {
     background: rgba(232, 224, 208, 0.08);
-
     border-color: #e8e0d0;
 }
 
 .story-button.unavailable {
     opacity: 0.3;
-
     cursor: not-allowed;
 }
 
@@ -148,29 +90,23 @@ body {
 
 #story-header {
     text-align: center;
-
     margin-bottom: 45px;
 }
 
 #story-title {
     font-size: clamp(2rem, 5vw, 3.5rem);
-
     letter-spacing: 0.1em;
-
     margin: 0 0 10px;
 }
 
 #act-number {
     text-transform: uppercase;
-
     letter-spacing: 0.2em;
-
     opacity: 0.55;
 }
 
 #story-text {
     font-size: 1.2rem;
-
     line-height: 1.9;
 }
 
@@ -186,39 +122,26 @@ body {
 #choices {
     display: flex;
     flex-direction: column;
-
     gap: 14px;
-
     margin-top: 40px;
 }
 
 .choice-button {
     width: 100%;
-
     text-align: left;
-
     background: transparent;
-
     color: #e8e0d0;
-
     border: 1px solid rgba(232, 224, 208, 0.35);
-
     padding: 18px 22px;
-
     font-family: inherit;
-
     font-size: 1.05rem;
-
     line-height: 1.5;
-
     cursor: pointer;
-
     transition: 0.2s ease;
 }
 
 .choice-button:hover {
     border-color: #e8e0d0;
-
     background: rgba(232, 224, 208, 0.06);
 }
 
@@ -233,28 +156,40 @@ body {
 
 #result-screen h1 {
     letter-spacing: 0.15em;
-
     margin-bottom: 45px;
 }
 
 #result-content {
     font-size: 1.25rem;
-
     line-height: 1.8;
+}
+
+.essence-result-image {
+    display: block;
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    margin: 0 auto 40px;
 }
 
 .result-label {
     text-transform: uppercase;
-
     letter-spacing: 0.15em;
-
     opacity: 0.55;
-
     margin-top: 25px;
 }
 
 .result-value {
     font-size: 2rem;
-
     margin-top: 5px;
+}
+
+.result-description {
+    max-width: 850px;
+    margin: 35px auto 0;
+    text-align: left;
+}
+
+.result-description p {
+    margin: 0 0 1.5em;
 }

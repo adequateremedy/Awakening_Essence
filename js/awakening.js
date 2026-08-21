@@ -11,66 +11,106 @@
 const gameState = {
 
     currentStory: null,
-
     currentNode: null,
 
     scores: {
-
         Agni: 0,
         Jala: 0,
         Prithvi: 0,
         Vayu: 0
-
-    },
-
-    feelings: {
-
-        Agni: {},
-        Jala: {},
-        Prithvi: {},
-        Vayu: {}
-
     }
 
 };
 
 
 /* =========================================================
-   ESSENCE DATA
+   ESSENCE RESULT DATA
    ========================================================= */
 
 const essenceData = {
 
     Agni: {
-
         name: "Agni",
+        triggerFeeling: "Defiance",
+        image: "assets/Essence-Type-Result/Agni-Essence-Type_Result.png",
+        result: `
+            <p>
+                Your Energy manifested as <strong>Agni</strong>, driven by a
+                Trigger Feeling of <strong>Defiance</strong>. When confronted,
+                threatened, deceived, or cornered, something within you refuses
+                to yield. You push back, challenge what stands against you,
+                and act rather than allow yourself to be controlled.
+            </p>
 
-        core: "Anger"
-
+            <p>
+                Your instinct is not simply to become angry—it is to
+                <strong>resist</strong>. The stronger the pressure becomes, the
+                more fiercely you assert yourself.
+            </p>
+        `
     },
 
     Jala: {
-
         name: "Jala",
+        triggerFeeling: "Sarcasm",
+        image: "assets/Essence-Type-Result/Jala-Essence-Type_Result.png",
+        result: `
+            <p>
+                Your Energy manifested as <strong>Jala</strong>, driven by a
+                Trigger Feeling of <strong>Sarcasm</strong>. When something
+                threatens your sense of safety or control, you instinctively
+                turn toward wit, humor, and sharp words. You may laugh when
+                others expect fear, mock what frightens you, or use cleverness
+                to regain control of a situation.
+            </p>
 
-        core: "Sadness"
-
+            <p>
+                Your response is fluid rather than forceful. You adapt, observe,
+                and find another way through.
+            </p>
+        `
     },
 
     Prithvi: {
-
         name: "Prithvi",
+        triggerFeeling: "Confidence",
+        image: "assets/Essence-Type-Result/Prithvi-Essence-Type_Result.png",
+        result: `
+            <p>
+                Your Energy manifested as <strong>Prithvi</strong>, driven by a
+                Trigger Feeling of <strong>Confidence</strong>. When confronted
+                with uncertainty or danger, you instinctively steady yourself,
+                observe what is happening, and trust your ability to navigate
+                it. You don't need to rush when you believe you can find the
+                right answer.
+            </p>
 
-        core: "Confidence"
-
+            <p>
+                Your strength comes from <strong>composure, judgment, and
+                certainty in yourself</strong>.
+            </p>
+        `
     },
 
     Vayu: {
-
         name: "Vayu",
+        triggerFeeling: "Fear",
+        image: "assets/Essence-Type-Result/Vayu-Essence-Type_Result.png",
+        result: `
+            <p>
+                Your Energy manifested as <strong>Vayu</strong>, driven by a
+                Trigger Feeling of <strong>Fear</strong>. When confronted with
+                danger or uncertainty, your instincts become sharply attuned to
+                what could go wrong. You notice exits, anticipate threats,
+                hesitate when the outcome is unclear, and protect yourself
+                before exposing yourself further.
+            </p>
 
-        core: "Fear"
-
+            <p>
+                Your fear is not weakness. It is the instinct that tells you
+                <strong>when to move, when to hide, and when to survive</strong>.
+            </p>
+        `
     }
 
 };
@@ -81,102 +121,56 @@ const essenceData = {
    ========================================================= */
 
 const storySelectionScreen =
-    document.getElementById(
-        "story-selection-screen"
-    );
-
+    document.getElementById("story-selection-screen");
 
 const storyScreen =
-    document.getElementById(
-        "story-screen"
-    );
-
+    document.getElementById("story-screen");
 
 const resultScreen =
-    document.getElementById(
-        "result-screen"
-    );
-
+    document.getElementById("result-screen");
 
 const storyButtons =
-    document.querySelectorAll(
-        ".story-button"
-    );
-
+    document.querySelectorAll(".story-button");
 
 const storyTitle =
-    document.getElementById(
-        "story-title"
-    );
-
+    document.getElementById("story-title");
 
 const actNumber =
-    document.getElementById(
-        "act-number"
-    );
-
+    document.getElementById("act-number");
 
 const storyText =
-    document.getElementById(
-        "story-text"
-    );
-
+    document.getElementById("story-text");
 
 const choicesContainer =
-    document.getElementById(
-        "choices"
-    );
-
+    document.getElementById("choices");
 
 const resultContent =
-    document.getElementById(
-        "result-content"
-    );
+    document.getElementById("result-content");
 
 
 /* =========================================================
    STORY SELECTION
    ========================================================= */
 
-storyButtons.forEach(
+storyButtons.forEach(button => {
 
-    button => {
+    button.addEventListener("click", () => {
 
-        button.addEventListener(
+        if (button.disabled) {
+            return;
+        }
 
-            "click",
+        const selectedStory = button.dataset.story;
 
-            () => {
+        if (!selectedStory) {
+            return;
+        }
 
-                if (button.disabled) {
+        startStory(selectedStory);
 
-                    return;
+    });
 
-                }
-
-
-                const selectedStory =
-                    button.dataset.story;
-
-
-                if (!selectedStory) {
-
-                    return;
-
-                }
-
-
-                startStory(
-                    selectedStory
-                );
-
-            }
-
-        );
-
-    }
-
-);
+});
 
 
 /* =========================================================
@@ -186,81 +180,29 @@ storyButtons.forEach(
 function startStory(storyName) {
 
     if (
-
-        typeof awakeningStories ===
-            "undefined" ||
-
+        typeof awakeningStories === "undefined" ||
         !awakeningStories[storyName]
-
     ) {
-
         console.error(
-
             `Awakening Essence story "${storyName}" could not be found.`
-
         );
-
         return;
-
     }
 
-
-    /* -----------------------------------------
-       Reset Story State
-       ----------------------------------------- */
-
-    gameState.currentStory =
-        storyName;
-
+    gameState.currentStory = storyName;
 
     gameState.scores = {
-
         Agni: 0,
         Jala: 0,
         Prithvi: 0,
         Vayu: 0
-
     };
 
+    gameState.currentNode = awakeningStories[storyName].start;
 
-    gameState.feelings = {
-
-        Agni: {},
-        Jala: {},
-        Prithvi: {},
-        Vayu: {}
-
-    };
-
-
-    /* -----------------------------------------
-       Begin At Story's Starting Node
-       ----------------------------------------- */
-
-    gameState.currentNode =
-        awakeningStories[
-            storyName
-        ].start;
-
-
-    /* -----------------------------------------
-       Change Screens
-       ----------------------------------------- */
-
-    storySelectionScreen.classList.remove(
-        "active"
-    );
-
-
-    resultScreen.classList.remove(
-        "active"
-    );
-
-
-    storyScreen.classList.add(
-        "active"
-    );
-
+    storySelectionScreen.classList.remove("active");
+    resultScreen.classList.remove("active");
+    storyScreen.classList.add("active");
 
     displayNode();
 
@@ -272,11 +214,7 @@ function startStory(storyName) {
    ========================================================= */
 
 function getCurrentStory() {
-
-    return awakeningStories[
-        gameState.currentStory
-    ];
-
+    return awakeningStories[gameState.currentStory];
 }
 
 
@@ -286,17 +224,26 @@ function getCurrentStory() {
 
 function getCurrentNode() {
 
-    const currentStory =
-        getCurrentStory();
-
+    const currentStory = getCurrentStory();
 
     return currentStory.acts.find(
+        act => act.id === gameState.currentNode
+    );
 
-        act =>
+}
 
-            act.id ===
-            gameState.currentNode
 
+/* =========================================================
+   GET TOTAL ACTS
+
+   The story itself determines how many Acts exist.
+   The Lie currently uses 5 Acts.
+   ========================================================= */
+
+function getTotalActs(story) {
+
+    return Math.max(
+        ...story.acts.map(act => act.act)
     );
 
 }
@@ -308,136 +255,45 @@ function getCurrentNode() {
 
 function displayNode() {
 
-    const currentStory =
-        getCurrentStory();
-
-
-    const node =
-        getCurrentNode();
-
-
-    /* -----------------------------------------
-       Safety Check
-       ----------------------------------------- */
+    const currentStory = getCurrentStory();
+    const node = getCurrentNode();
 
     if (!node) {
-
         console.error(
-
             "Awakening Essence could not find node:",
-
             gameState.currentNode
-
         );
-
         return;
-
     }
 
-
-    /* -----------------------------------------
-       Story Title
-       ----------------------------------------- */
-
-    storyTitle.textContent =
-        currentStory.title;
-
-
-    /* -----------------------------------------
-       Act Number
-       ----------------------------------------- */
+    storyTitle.textContent = currentStory.title;
 
     actNumber.textContent =
+        `Act ${node.act} of ${getTotalActs(currentStory)} — ${node.title}`;
 
-        `Act ${node.act} of 10 — ${node.title}`;
+    storyText.innerHTML = node.text;
 
+    choicesContainer.innerHTML = "";
 
-    /* -----------------------------------------
-       Story Text
-       ----------------------------------------- */
+    node.choices.forEach(choice => {
 
-    storyText.innerHTML =
-        node.text;
+        const button = document.createElement("button");
 
+        button.className = "choice-button";
+        button.type = "button";
+        button.innerHTML = choice.text;
 
-    /* -----------------------------------------
-       Clear Previous Choices
-       ----------------------------------------- */
+        button.addEventListener("click", () => {
+            recordChoice(choice);
+        });
 
-    choicesContainer.innerHTML =
-        "";
+        choicesContainer.appendChild(button);
 
-
-    /* -----------------------------------------
-       Create Choices
-       ----------------------------------------- */
-
-    node.choices.forEach(
-
-        choice => {
-
-            const button =
-                document.createElement(
-                    "button"
-                );
-
-
-            button.className =
-                "choice-button";
-
-
-            button.type =
-                "button";
-
-
-            /*
-                IMPORTANT:
-
-                Only the player's response is
-                displayed.
-
-                Essence and Trigger Feeling
-                remain hidden.
-            */
-
-            button.innerHTML =
-                choice.text;
-
-
-            button.addEventListener(
-
-                "click",
-
-                () => {
-
-                    recordChoice(
-                        choice
-                    );
-
-                }
-
-            );
-
-
-            choicesContainer.appendChild(
-                button
-            );
-
-        }
-
-    );
-
-
-    /* -----------------------------------------
-       Scroll Back To Top
-       ----------------------------------------- */
+    });
 
     window.scrollTo({
-
         top: 0,
-
         behavior: "smooth"
-
     });
 
 }
@@ -449,81 +305,19 @@ function displayNode() {
 
 function recordChoice(choice) {
 
-    /* -----------------------------------------
-       Record Essence Score
-       ----------------------------------------- */
-
-    if (
-
-        !gameState.scores.hasOwnProperty(
-            choice.essence
-        )
-
-    ) {
-
-        console.error(
-            "Invalid Essence Type:",
-            choice.essence
-        );
-
+    if (!Object.prototype.hasOwnProperty.call(gameState.scores, choice.essence)) {
+        console.error("Invalid Essence Type:", choice.essence);
         return;
-
     }
 
+    gameState.scores[choice.essence]++;
 
-    gameState.scores[
-        choice.essence
-    ]++;
-
-
-    /* -----------------------------------------
-       Record Trigger Feeling
-       ----------------------------------------- */
-
-    if (
-
-        !gameState.feelings[
-            choice.essence
-        ][
-            choice.feeling
-        ]
-
-    ) {
-
-        gameState.feelings[
-            choice.essence
-        ][
-            choice.feeling
-        ] = 0;
-
-    }
-
-
-    gameState.feelings[
-        choice.essence
-    ][
-        choice.feeling
-    ]++;
-
-
-    /* -----------------------------------------
-       Determine Next Narrative Node
-       ----------------------------------------- */
-
-    if (
-        choice.next === null
-    ) {
-
+    if (choice.next === null) {
         revealEssence();
-
         return;
-
     }
 
-
-    gameState.currentNode =
-        choice.next;
-
+    gameState.currentNode = choice.next;
 
     displayNode();
 
@@ -532,84 +326,32 @@ function recordChoice(choice) {
 
 /* =========================================================
    DETERMINE ESSENCE TYPE
+
+   If more than one Essence has the highest score, ONLY the
+   tied highest Essences are placed into the winner pool.
+   One of those tied winners is then selected randomly.
    ========================================================= */
 
 function determineEssence() {
 
-    const scores =
-        gameState.scores;
+    const scores = gameState.scores;
 
-
-    const maxScore =
-        Math.max(
-
-            scores.Agni,
-            scores.Jala,
-            scores.Prithvi,
-            scores.Vayu
-
-        );
-
-
-    const winners =
-        Object.keys(
-            scores
-        ).filter(
-
-            essence =>
-
-                scores[essence] ===
-                maxScore
-
-        );
-
-
-    return winners[0];
-
-}
-
-
-/* =========================================================
-   DETERMINE TRIGGER FEELING
-   ========================================================= */
-
-function determineTriggerFeeling(
-    essence
-) {
-
-    const feelings =
-        gameState.feelings[
-            essence
-        ];
-
-
-    const entries =
-        Object.entries(
-            feelings
-        );
-
-
-    if (
-        entries.length === 0
-    ) {
-
-        return essenceData[
-            essence
-        ].core;
-
-    }
-
-
-    entries.sort(
-
-        (a, b) =>
-
-            b[1] - a[1]
-
+    const maxScore = Math.max(
+        scores.Agni,
+        scores.Jala,
+        scores.Prithvi,
+        scores.Vayu
     );
 
+    const winners = Object.keys(scores).filter(
+        essence => scores[essence] === maxScore
+    );
 
-    return entries[0][0];
+    const randomIndex = Math.floor(
+        Math.random() * winners.length
+    );
+
+    return winners[randomIndex];
 
 }
 
@@ -620,59 +362,45 @@ function determineTriggerFeeling(
 
 function revealEssence() {
 
-    const essence =
-        determineEssence();
+    const essence = determineEssence();
+    const data = essenceData[essence];
 
-
-    const triggerFeeling =
-        determineTriggerFeeling(
-            essence
-        );
-
-
-    /* -----------------------------------------
-       Leave Story
-       ----------------------------------------- */
-
-    storyScreen.classList.remove(
-        "active"
-    );
-
-
-    /* -----------------------------------------
-       Show Result
-       ----------------------------------------- */
-
-    resultScreen.classList.add(
-        "active"
-    );
-
-
-    /* -----------------------------------------
-       Display Result
-       ----------------------------------------- */
+    storyScreen.classList.remove("active");
+    resultScreen.classList.add("active");
 
     resultContent.innerHTML = `
+
+        <img
+            class="essence-result-image"
+            src="${data.image}"
+            alt="${data.name} Essence Type Result"
+        >
 
         <div class="result-label">
             Essence Type
         </div>
 
         <div class="result-value">
-            ${essenceData[essence].name}
+            ${data.name}
         </div>
-
 
         <div class="result-label">
             Trigger Feeling
         </div>
 
         <div class="result-value">
-            ${essenceData[essence].core}
-            —
-            ${triggerFeeling}
+            ${data.triggerFeeling}
+        </div>
+
+        <div class="result-description">
+            ${data.result}
         </div>
 
     `;
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
 }

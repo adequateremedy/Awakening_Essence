@@ -99,12 +99,6 @@ body {
     margin: 0 0 10px;
 }
 
-#act-number {
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    opacity: 0.55;
-}
-
 #story-text {
     font-size: 1.2rem;
     line-height: 1.9;

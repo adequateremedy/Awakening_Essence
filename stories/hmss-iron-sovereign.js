@@ -83,7 +83,7 @@ awakeningStories["hmss-iron-sovereign"] = {
             `,
             choices: [
                 {
-                    text: `The Cargo Hold.`,
+                    text: `Continue.`,
                     essence: "None",
                     next: "act2"
                 }
@@ -100,7 +100,7 @@ awakeningStories["hmss-iron-sovereign"] = {
             `,
             choices: [
                 {
-                    text: `The Cargo Hold.`,
+                    text: `Continue.`,
                     essence: "None",
                     next: "act2"
                 }
@@ -119,7 +119,7 @@ awakeningStories["hmss-iron-sovereign"] = {
             `,
             choices: [
                 {
-                    text: `The Cargo Hold.`,
+                    text: `Continue.`,
                     essence: "None",
                     next: "act2"
                 }
@@ -138,7 +138,7 @@ awakeningStories["hmss-iron-sovereign"] = {
             `,
             choices: [
                 {
-                    text: `The Cargo Hold.`,
+                    text: `Continue.`,
                     essence: "None",
                     next: "act2"
                 }

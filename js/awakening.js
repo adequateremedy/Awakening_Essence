@@ -199,6 +199,10 @@ function displayNode() {
         return;
     }
 
+    // Set Dynamic Room Background Attribute
+    const safeTitle = node.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    document.body.setAttribute('data-room', safeTitle);
+
     storyTitle.textContent = node.title;
     storyText.innerHTML = node.text;
     choicesContainer.innerHTML = "";
@@ -294,6 +298,9 @@ function revealEssence() {
     const data = essenceData[essence];
     const currentStory = getCurrentStory();
 
+    // Reset background to neutral for the ending screen
+    document.body.removeAttribute('data-room');
+
     gameState.finalFeeling = currentStory.triggerFeelings[essence];
 
     storyScreen.classList.remove("active");
@@ -329,3 +336,40 @@ function revealEssence() {
     });
 
 }
+
+/* =========================================================
+   SPARKLE CURSOR EFFECT
+   ========================================================= */
+
+function initSparkleCursor() {
+    let lastSparkleTime = 0;
+    
+    window.addEventListener('mousemove', (e) => {
+        const now = Date.now();
+        // Spawns a sparkle every 35 milliseconds to keep the game running smoothly
+        if (now - lastSparkleTime < 35) return;
+        lastSparkleTime = now;
+
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        
+        // Randomize the start position slightly so it looks natural
+        const offsetX = (Math.random() - 0.5) * 12;
+        const offsetY = (Math.random() - 0.5) * 12;
+        
+        sparkle.style.left = (e.clientX + offsetX) + 'px';
+        sparkle.style.top = (e.clientY + offsetY) + 'px';
+        
+        document.body.appendChild(sparkle);
+
+        // Cleans up the DOM after the 0.8s CSS animation finishes
+        setTimeout(() => {
+            if (sparkle.parentNode) {
+                sparkle.remove();
+            }
+        }, 800);
+    });
+}
+
+// Start the cursor effect
+initSparkleCursor();

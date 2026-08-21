@@ -83,6 +83,20 @@ const resultContent =
 
 
 /* =========================================================
+   UTILITIES
+   ========================================================= */
+
+function shuffleArray(array) {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+}
+
+
+/* =========================================================
    STORY SELECTION
    ========================================================= */
 
@@ -169,19 +183,6 @@ function getCurrentNode() {
 
 
 /* =========================================================
-   GET TOTAL ACTS
-   ========================================================= */
-
-function getTotalActs(story) {
-
-    return Math.max(
-        ...story.acts.map(act => act.act)
-    );
-
-}
-
-
-/* =========================================================
    DISPLAY CURRENT NODE
    ========================================================= */
 
@@ -198,14 +199,13 @@ function displayNode() {
         return;
     }
 
-    // Displays the current node title directly
     storyTitle.textContent = node.title;
-
     storyText.innerHTML = node.text;
-
     choicesContainer.innerHTML = "";
 
-    node.choices.forEach(choice => {
+    const shuffledChoices = shuffleArray(node.choices);
+
+    shuffledChoices.forEach(choice => {
 
         const button = document.createElement("button");
 

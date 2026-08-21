@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -9,20 +11,27 @@ body {
     min-height: 100%;
 }
 
+@keyframes furnacePulse {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 body {
-    background: #000;
-    color: #e8e0d0;
-    font-family: Georgia, "Times New Roman", serif;
+    /* Deep desaturated navy to a smoky amber/charcoal */
+    background: radial-gradient(circle at center, #1a1614 0%, #0b0c10 100%);
+    background-size: 200% 200%;
+    animation: furnacePulse 18s ease-in-out infinite;
+    color: #e3d2b9; /* Brass/amber tint */
+    font-family: 'Crimson Text', Georgia, "Times New Roman", serif;
 }
 
 #game {
     width: 100%;
     min-height: 100vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     padding: 30px;
 }
 
@@ -35,6 +44,21 @@ body {
     display: block;
 }
 
+/* =========================================
+   CINEMATIC TRANSITIONS
+========================================= */
+
+@keyframes fadeDrift {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 /* =========================================
    STORY SELECTION
@@ -42,6 +66,7 @@ body {
 
 #story-selection-screen {
     text-align: center;
+    animation: fadeDrift 1s ease forwards;
 }
 
 #awakening-intro-image {
@@ -64,18 +89,24 @@ body {
     width: 100%;
     padding: 20px;
     background: transparent;
-    color: #e8e0d0;
-    border: 1px solid rgba(232, 224, 208, 0.45);
-    font-family: inherit;
+    color: #e3d2b9;
+    border: 1px solid rgba(227, 210, 185, 0.35);
+    font-family: 'Cinzel', serif;
     font-size: 1.1rem;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.15em;
     cursor: pointer;
-    transition: 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .story-button:hover {
-    background: rgba(232, 224, 208, 0.08);
-    border-color: #e8e0d0;
+    background: rgba(227, 210, 185, 0.08);
+    border-color: #e3d2b9;
+    box-shadow: 0 0 15px rgba(227, 210, 185, 0.15);
+    letter-spacing: 0.2em;
+}
+
+.story-button:active {
+    transform: scale(0.98);
 }
 
 .story-button.unavailable {
@@ -94,20 +125,34 @@ body {
 }
 
 #story-title {
+    font-family: 'Cinzel', serif;
     font-size: clamp(2rem, 5vw, 3.5rem);
     letter-spacing: 0.1em;
     margin: 0 0 10px;
+    color: #f0e4d4;
 }
 
 #story-text {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.9;
     text-align: center;
 }
 
+/* Dynamically generated paragraphs animate in */
 #story-text p {
     margin: 0 0 1.5em;
+    opacity: 0;
+    animation: fadeDrift 0.8s ease forwards;
 }
+
+#story-text p:nth-child(1) { animation-delay: 0.1s; }
+#story-text p:nth-child(2) { animation-delay: 0.2s; }
+#story-text p:nth-child(3) { animation-delay: 0.3s; }
+#story-text p:nth-child(4) { animation-delay: 0.4s; }
+#story-text p:nth-child(5) { animation-delay: 0.5s; }
+#story-text p:nth-child(6) { animation-delay: 0.6s; }
+#story-text p:nth-child(7) { animation-delay: 0.7s; }
+#story-text p:nth-child(8) { animation-delay: 0.8s; }
 
 
 /* =========================================
@@ -121,23 +166,38 @@ body {
     margin-top: 40px;
 }
 
+/* Dynamically generated buttons animate in */
 .choice-button {
     width: 100%;
     text-align: center;
     background: transparent;
-    color: #e8e0d0;
-    border: 1px solid rgba(232, 224, 208, 0.35);
+    color: #e3d2b9;
+    border: 1px solid rgba(227, 210, 185, 0.25);
     padding: 18px 22px;
-    font-family: inherit;
-    font-size: 1.05rem;
+    font-family: 'Crimson Text', serif;
+    font-size: 1.15rem;
     line-height: 1.5;
     cursor: pointer;
-    transition: 0.2s ease;
+    transition: all 0.3s ease;
+    
+    opacity: 0;
+    animation: fadeDrift 0.6s ease forwards;
 }
 
+.choice-button:nth-child(1) { animation-delay: 0.4s; }
+.choice-button:nth-child(2) { animation-delay: 0.5s; }
+.choice-button:nth-child(3) { animation-delay: 0.6s; }
+.choice-button:nth-child(4) { animation-delay: 0.7s; }
+
 .choice-button:hover {
-    border-color: #e8e0d0;
-    background: rgba(232, 224, 208, 0.06);
+    border-color: #e3d2b9;
+    background: rgba(227, 210, 185, 0.08);
+    box-shadow: 0 0 12px rgba(227, 210, 185, 0.1);
+    letter-spacing: 0.02em;
+}
+
+.choice-button:active {
+    transform: scale(0.98);
 }
 
 
@@ -147,11 +207,14 @@ body {
 
 #result-screen {
     text-align: center;
+    animation: fadeDrift 1s ease forwards;
 }
 
 #result-screen h1 {
+    font-family: 'Cinzel', serif;
     letter-spacing: 0.15em;
     margin-bottom: 45px;
+    color: #f0e4d4;
 }
 
 #result-content {
@@ -175,6 +238,7 @@ body {
 }
 
 .result-value {
+    font-family: 'Cinzel', serif;
     font-size: 2rem;
     margin-top: 5px;
 }

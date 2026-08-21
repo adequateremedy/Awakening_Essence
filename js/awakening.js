@@ -72,9 +72,6 @@ const storyButtons =
 const storyTitle =
     document.getElementById("story-title");
 
-const actNumber =
-    document.getElementById("act-number");
-
 const storyText =
     document.getElementById("story-text");
 
@@ -201,10 +198,8 @@ function displayNode() {
         return;
     }
 
-    storyTitle.textContent = currentStory.title;
-
-    actNumber.textContent =
-        `Act ${node.act} of ${getTotalActs(currentStory)} — ${node.title}`;
+    // Displays the current node title directly
+    storyTitle.textContent = node.title;
 
     storyText.innerHTML = node.text;
 

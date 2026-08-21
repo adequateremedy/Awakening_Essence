@@ -12,6 +12,7 @@ const gameState = {
 
     currentStory: null,
     currentNode: null,
+    finalFeeling: null,
 
     scores: {
         Agni: 0,
@@ -31,86 +32,22 @@ const essenceData = {
 
     Agni: {
         name: "Agni",
-        triggerFeeling: "Defiance",
-        image: "assets/Essence-Type-Result/Agni-Essence-Type_Result.png",
-        result: `
-            <p>
-                Your Energy manifested as <strong>Agni</strong>, driven by a
-                Trigger Feeling of <strong>Defiance</strong>. When confronted,
-                threatened, deceived, or cornered, something within you refuses
-                to yield. You push back, challenge what stands against you,
-                and act rather than allow yourself to be controlled.
-            </p>
-
-            <p>
-                Your instinct is not simply to become angry—it is to
-                <strong>resist</strong>. The stronger the pressure becomes, the
-                more fiercely you assert yourself.
-            </p>
-        `
+        image: "assets/Essence-Type-Result/Agni-Essence-Type_Result.png"
     },
 
     Jala: {
         name: "Jala",
-        triggerFeeling: "Sarcasm",
-        image: "assets/Essence-Type-Result/Jala-Essence-Type_Result.png",
-        result: `
-            <p>
-                Your Energy manifested as <strong>Jala</strong>, driven by a
-                Trigger Feeling of <strong>Sarcasm</strong>. When something
-                threatens your sense of safety or control, you instinctively
-                turn toward wit, humor, and sharp words. You may laugh when
-                others expect fear, mock what frightens you, or use cleverness
-                to regain control of a situation.
-            </p>
-
-            <p>
-                Your response is fluid rather than forceful. You adapt, observe,
-                and find another way through.
-            </p>
-        `
+        image: "assets/Essence-Type-Result/Jala-Essence-Type_Result.png"
     },
 
     Prithvi: {
         name: "Prithvi",
-        triggerFeeling: "Confidence",
-        image: "assets/Essence-Type-Result/Prithvi-Essence-Type_Result.png",
-        result: `
-            <p>
-                Your Energy manifested as <strong>Prithvi</strong>, driven by a
-                Trigger Feeling of <strong>Confidence</strong>. When confronted
-                with uncertainty or danger, you instinctively steady yourself,
-                observe what is happening, and trust your ability to navigate
-                it. You don't need to rush when you believe you can find the
-                right answer.
-            </p>
-
-            <p>
-                Your strength comes from <strong>composure, judgment, and
-                certainty in yourself</strong>.
-            </p>
-        `
+        image: "assets/Essence-Type-Result/Prithvi-Essence-Type_Result.png"
     },
 
     Vayu: {
         name: "Vayu",
-        triggerFeeling: "Fear",
-        image: "assets/Essence-Type-Result/Vayu-Essence-Type_Result.png",
-        result: `
-            <p>
-                Your Energy manifested as <strong>Vayu</strong>, driven by a
-                Trigger Feeling of <strong>Fear</strong>. When confronted with
-                danger or uncertainty, your instincts become sharply attuned to
-                what could go wrong. You notice exits, anticipate threats,
-                hesitate when the outcome is unclear, and protect yourself
-                before exposing yourself further.
-            </p>
-
-            <p>
-                Your fear is not weakness. It is the instinct that tells you
-                <strong>when to move, when to hide, and when to survive</strong>.
-            </p>
-        `
+        image: "assets/Essence-Type-Result/Vayu-Essence-Type_Result.png"
     }
 
 };
@@ -190,6 +127,7 @@ function startStory(storyName) {
     }
 
     gameState.currentStory = storyName;
+    gameState.finalFeeling = null;
 
     gameState.scores = {
         Agni: 0,
@@ -235,9 +173,6 @@ function getCurrentNode() {
 
 /* =========================================================
    GET TOTAL ACTS
-
-   The story itself determines how many Acts exist.
-   The Lie currently uses 5 Acts.
    ========================================================= */
 
 function getTotalActs(story) {
@@ -305,12 +240,14 @@ function displayNode() {
 
 function recordChoice(choice) {
 
-    if (!Object.prototype.hasOwnProperty.call(gameState.scores, choice.essence)) {
-        console.error("Invalid Essence Type:", choice.essence);
-        return;
-    }
+    if (choice.essence !== "None") {
+        if (!Object.prototype.hasOwnProperty.call(gameState.scores, choice.essence)) {
+            console.error("Invalid Essence Type:", choice.essence);
+            return;
+        }
 
-    gameState.scores[choice.essence]++;
+        gameState.scores[choice.essence]++;
+    }
 
     if (choice.next === null) {
         revealEssence();
@@ -326,10 +263,6 @@ function recordChoice(choice) {
 
 /* =========================================================
    DETERMINE ESSENCE TYPE
-
-   If more than one Essence has the highest score, ONLY the
-   tied highest Essences are placed into the winner pool.
-   One of those tied winners is then selected randomly.
    ========================================================= */
 
 function determineEssence() {
@@ -364,6 +297,9 @@ function revealEssence() {
 
     const essence = determineEssence();
     const data = essenceData[essence];
+    const currentStory = getCurrentStory();
+
+    gameState.finalFeeling = currentStory.triggerFeelings[essence];
 
     storyScreen.classList.remove("active");
     resultScreen.classList.add("active");
@@ -376,27 +312,21 @@ function revealEssence() {
             alt="${data.name} Essence Type Result"
         >
 
-        <div class="result-label">
-            Essence Type
-        </div>
-
-        <div class="result-value">
-            ${data.name}
-        </div>
-
-        <div class="result-label">
-            Trigger Feeling
-        </div>
-
-        <div class="result-value">
-            ${data.triggerFeeling}
-        </div>
-
-        <div class="result-description">
-            ${data.result}
+        <div style="display: flex; flex-direction: column; gap: 15px; width: min(650px, 100%); margin: 0 auto;">
+            <button class="story-button" id="replay-button" type="button">
+                REPLAY
+            </button>
+            <button class="story-button" id="save-button" type="button">
+                SAVE
+            </button>
         </div>
 
     `;
+
+    document.getElementById("replay-button").addEventListener("click", () => {
+        resultScreen.classList.remove("active");
+        storySelectionScreen.classList.add("active");
+    });
 
     window.scrollTo({
         top: 0,
